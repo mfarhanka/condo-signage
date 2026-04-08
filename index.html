@@ -3,315 +3,224 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&T Media | Condo Signage Solutions</title>
-    <meta
-        name="description"
-        content="Professional building signage solutions for commercial buildings and condominiums by A&T Media Sdn. Bhd."
-    >
+    <title>Condo Signage | Professional Sign Systems</title>
+    <meta name="description" content="Compact professional website for condominium signage, wayfinding systems, warning signs, and custom sign fabrication.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="assets/css/site.css" rel="stylesheet">
 </head>
-<body>
-    <div class="site-shell">
-        <header class="topbar">
-            <a class="brand" href="#home" aria-label="A&T Media home">
-                <span class="brand-mark">A&amp;T</span>
-                <span class="brand-copy">
-                    <strong>A&amp;T Media</strong>
-                    <span>Condo Signage Solutions</span>
-                </span>
+<body data-page="home">
+    <nav class="navbar navbar-expand-lg fixed-top site-navbar">
+        <div class="container py-2">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <span class="brand-mark">CS</span>
+                <span>Condo Signage</span>
             </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="siteNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" data-nav="home" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" data-nav="about" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" data-nav="catalogue" href="catalogue.html">Product Catalogue</a></li>
+                    <li class="nav-item"><a class="nav-link" data-nav="projects" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" data-nav="services" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" data-nav="contact" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-            <nav class="nav" aria-label="Primary navigation">
-                <a href="#about">About</a>
-                <a href="#catalogue">Catalogue</a>
-                <a href="#projects">Projects</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <a class="button button-ghost" href="#contact">Free Consultation</a>
-        </header>
-
-        <main>
-            <section class="hero section" id="home">
-                <div class="hero-copy">
-                    <p class="eyebrow">Professional signage for managed properties</p>
-                    <h1>Building signage that feels approved before installation starts.</h1>
-                    <p class="hero-text">
-                        Compliant, durable, management-friendly signage solutions for commercial
-                        buildings and condominiums. We help developers, MC/JMB teams, and
-                        property managers improve wayfinding, visibility, and long-term value.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a class="button" href="#catalogue">Browse Catalogue</a>
-                        <a class="button button-secondary" href="#services">See Our Process</a>
-                    </div>
-
-                    <ul class="hero-points" aria-label="Key advantages">
-                        <li>Suitable for new developments and existing buildings</li>
-                        <li>Indoor and outdoor signage systems</li>
-                        <li>Designed for approvals, fabrication, and clean installation</li>
-                    </ul>
-                </div>
-
-                <aside class="hero-panel" aria-label="Capabilities summary">
-                    <div class="hero-card hero-card-primary">
-                        <span>Core Focus</span>
-                        <strong>Commercial Buildings &amp; Condominiums</strong>
-                    </div>
-                    <div class="hero-grid">
-                        <div class="hero-card">
-                            <span>Production</span>
-                            <strong>10,000 sq ft facility</strong>
-                        </div>
-                        <div class="hero-card">
-                            <span>Experience</span>
-                            <strong>20 years senior oversight</strong>
-                        </div>
-                        <div class="hero-card">
-                            <span>Equipment</span>
-                            <strong>Routers, lasers, UV printers, 3D lettering</strong>
-                        </div>
-                        <div class="hero-card accent-card">
-                            <span>Outcome</span>
-                            <strong>Durable signage with clear site coordination</strong>
+    <main class="page-shell">
+        <section class="container pb-4 pb-lg-5">
+            <div class="hero-card">
+                <div class="row g-0 align-items-stretch">
+                    <div class="col-lg-7">
+                        <div class="p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
+                            <span class="eyebrow mb-3"><i class="bi bi-signpost-split"></i> Compact professional signage site</span>
+                            <h1 class="display-title display-4 mb-3">Sign systems for condominiums, carparks, amenities, and shared spaces.</h1>
+                            <p class="lede mb-4">A clean first-version website for presenting building signage categories, core services, and a direct enquiry path. Replace the placeholders with approved company copy when ready.</p>
+                            <div class="hero-meta mb-4">
+                                <div class="hero-meta-item">
+                                    <span class="hero-meta-label">Project Fit</span>
+                                    <span class="hero-meta-value">Residential Properties</span>
+                                </div>
+                                <div class="hero-meta-item">
+                                    <span class="hero-meta-label">Coverage</span>
+                                    <span class="hero-meta-value">Indoor + Outdoor</span>
+                                </div>
+                                <div class="hero-meta-item">
+                                    <span class="hero-meta-label">Focus</span>
+                                    <span class="hero-meta-value">Clear Navigation</span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <span class="feature-chip"><i class="bi bi-check2-circle"></i> Bootstrap 5 layout</span>
+                                <span class="feature-chip"><i class="bi bi-check2-circle"></i> Mobile-ready structure</span>
+                                <span class="feature-chip"><i class="bi bi-check2-circle"></i> Compact page density</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a class="btn btn-brand btn-lg px-4" href="catalogue.html">Browse Catalogue</a>
+                                <a class="btn btn-outline-brand btn-lg px-4" href="contact.html">Request Enquiry</a>
+                            </div>
                         </div>
                     </div>
-                </aside>
-            </section>
-
-            <section class="section intro-band">
-                <div>
-                    <p class="eyebrow">What clients need</p>
-                    <h2>Clear placement. Durable materials. Minimal disruption.</h2>
-                </div>
-                <p>
-                    The brief centers on signage that works within active, occupied buildings.
-                    This site is structured around that promise: practical products, a visible
-                    process, and a tone that speaks to building management rather than retail impulse.
-                </p>
-            </section>
-
-            <section class="section about" id="about">
-                <div class="section-heading">
-                    <p class="eyebrow">About Us</p>
-                    <h2>A&amp;T Media Sdn. Bhd. combines print, fabrication, and on-site execution.</h2>
-                </div>
-
-                <div class="about-layout">
-                    <div class="about-copy">
-                        <p>
-                            A&amp;T Media Sdn. Bhd. is a printing and advertising company providing
-                            signage design and creation in the Kuala Lumpur area, with headquarters
-                            in Ulu Tiram, Johor, Malaysia.
-                        </p>
-                        <p>
-                            Our in-house support covers production, design, marketing, on-site
-                            installation, and evaluation, giving clients a single team to work with
-                            from planning through completion.
-                        </p>
-                    </div>
-
-                    <div class="stat-stack">
-                        <article class="stat-card">
-                            <span>Production oversight</span>
-                            <strong>Senior manager with 20 years of experience</strong>
-                        </article>
-                        <article class="stat-card">
-                            <span>Facility scale</span>
-                            <strong>10,000 square feet of production space</strong>
-                        </article>
-                        <article class="stat-card">
-                            <span>Equipment</span>
-                            <strong>Routers, lasers, UV printers, plotters, cutting beds, 3D lettering, welding</strong>
-                        </article>
+                    <div class="col-lg-5">
+                        <div class="hero-visual p-4 p-md-5 d-flex flex-column justify-content-between">
+                            <div class="hero-stack">
+                                <p class="text-uppercase small fw-bold mb-3 opacity-75">Core focus</p>
+                                <div class="d-grid gap-2">
+                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-compass"></i> Wayfinding clarity</span>
+                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-building"></i> Indoor and outdoor sign systems</span>
+                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-car-front"></i> Carpark and unit identification</span>
+                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-exclamation-triangle"></i> Safety and notice communication</span>
+                                </div>
+                            </div>
+                            <div class="hero-stack mt-4">
+                                <div class="row g-3">
+                                    <div class="col-6">
+                                        <div class="metric-card bg-white text-dark">
+                                            <div class="metric-value">10</div>
+                                            <p class="mb-0 text-secondary small">Catalogue categories prepared</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="metric-card bg-white text-dark">
+                                            <div class="metric-value">6</div>
+                                            <p class="mb-0 text-secondary small">Core website pages</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="section catalogue" id="catalogue">
-                <div class="section-heading split-heading">
-                    <div>
-                        <p class="eyebrow">Product Catalogue</p>
-                        <h2>Ten signage categories for managed developments and common areas.</h2>
+        <section class="container py-4 py-lg-5">
+            <div class="row align-items-end g-4 mb-4">
+                <div class="col-lg-7" data-reveal>
+                    <span class="eyebrow mb-3"><i class="bi bi-grid"></i> Quick overview</span>
+                    <h2 class="section-heading mb-3">Built to explain your offering quickly and look credible on first contact.</h2>
+                    <p class="section-copy section-intro mb-0">This first release uses concise placeholder text and a clear page structure so your team can review the layout before final company content, photography, and project references are inserted.</p>
+                </div>
+                <div class="col-lg-5" data-reveal>
+                    <div class="glass-card p-4">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="metric-card shadow-none bg-transparent border">
+                                    <div class="metric-value">24h</div>
+                                    <p class="mb-0 text-secondary small">Design review turnaround placeholder</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-card shadow-none bg-transparent border">
+                                    <div class="metric-value">4</div>
+                                    <p class="mb-0 text-secondary small">Service steps highlighted</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p>
-                        The catalogue is organized around practical building use cases rather than
-                        decorative categories, which keeps the site aligned with the PDF brief.
-                    </p>
                 </div>
-
-                <div class="catalogue-grid">
-                    <article class="catalogue-card">
-                        <span>01</span>
-                        <h3>Wayfinding Signs</h3>
-                        <p>Directional systems that reduce confusion across lobbies, lifts, parking, and shared access points.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>02</span>
-                        <h3>Notice Boards</h3>
-                        <p>Management-ready communication surfaces for announcements, compliance notices, and resident updates.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>03</span>
-                        <h3>Safety Warning Signs</h3>
-                        <p>Visible, durable warnings designed to support compliance and reduce risk in high-traffic areas.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>04</span>
-                        <h3>Indoor Signage</h3>
-                        <p>LED signs and 3D lettering for reception areas, corridors, facilities, and branded indoor touchpoints.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>05</span>
-                        <h3>Outdoor Signage</h3>
-                        <p>Frontlit, backlit, and lightbox applications built for visibility, weather exposure, and street presence.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>06</span>
-                        <h3>Custom Number Signage</h3>
-                        <p>Unit identification systems with consistent legibility for blocks, levels, suites, and private access areas.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>07</span>
-                        <h3>Carpark Signage</h3>
-                        <p>Entry, circulation, zone, and bay indicators that improve flow and make parking easier to navigate.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>08</span>
-                        <h3>Advertising Signage</h3>
-                        <p>Promotional displays that fit within property standards while supporting leasing, retail, or campaign needs.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>09</span>
-                        <h3>Door Signage</h3>
-                        <p>Room labels, access markers, and identification signs for service areas, amenities, and management spaces.</p>
-                    </article>
-                    <article class="catalogue-card">
-                        <span>10</span>
-                        <h3>Amenity Signage</h3>
-                        <p>Signage for gyms, halls, pools, and shared facilities that supports orientation and property presentation.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="section projects" id="projects">
-                <div class="section-heading split-heading">
-                    <div>
-                        <p class="eyebrow">Projects &amp; Reviews</p>
-                        <h2>Designed for occupied sites where clean execution matters.</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-xl-3" data-reveal>
+                    <div class="process-card p-4">
+                        <div class="icon-badge mb-3"><i class="bi bi-search"></i></div>
+                        <h3 class="card-title mb-2">Site Assessment</h3>
+                        <p class="section-copy mb-0">Capture entry points, routes, amenities, regulatory needs, and sign placement constraints.</p>
                     </div>
-                    <p>
-                        The PDF lists this section without project details, so the site positions it as
-                        a trust-building area focused on delivery standards and stakeholder confidence.
-                    </p>
                 </div>
-
-                <div class="review-grid">
-                    <article class="review-card">
-                        <h3>Management-first planning</h3>
-                        <p>Layouts and placement are prepared with approval workflows in mind, making review easier for MC/JMB and property teams.</p>
-                    </article>
-                    <article class="review-card">
-                        <h3>Installation with minimal disruption</h3>
-                        <p>Work is coordinated to suit active buildings, shared spaces, and resident-facing environments.</p>
-                    </article>
-                    <article class="review-card">
-                        <h3>Long-term appearance</h3>
-                        <p>Materials and fabrication choices are framed around durability, clarity, and ongoing visibility in Malaysian conditions.</p>
-                    </article>
-                </div>
-            </section>
-
-            <section class="section services" id="services">
-                <div class="section-heading">
-                    <p class="eyebrow">Services</p>
-                    <h2>Structured, management-friendly delivery from assessment to installation.</h2>
-                </div>
-
-                <div class="process-list">
-                    <article class="process-card">
-                        <span>1</span>
-                        <h3>Site Assessment</h3>
-                        <p>Visibility, layout, and on-site requirements are reviewed before recommendations are made.</p>
-                    </article>
-                    <article class="process-card">
-                        <span>2</span>
-                        <h3>Design Mockup</h3>
-                        <p>Placement visuals are prepared for review and approval so decision-makers can assess fit before production.</p>
-                    </article>
-                    <article class="process-card">
-                        <span>3</span>
-                        <h3>Fabrication</h3>
-                        <p>Quality materials and workmanship are applied in-house using production equipment suited to signage work.</p>
-                    </article>
-                    <article class="process-card">
-                        <span>4</span>
-                        <h3>Installation</h3>
-                        <p>Execution is coordinated for safety, neat finishing, and smooth handoff across managed building environments.</p>
-                    </article>
-                </div>
-
-                <div class="service-points">
-                    <p>Minimal disruption. Clear communication. Reliable delivery.</p>
-                    <p>Clear layout and placement planning for approvals.</p>
-                    <p>Durable materials suitable for Malaysia's climate.</p>
-                    <p>Professional appearance that enhances property value.</p>
-                    <p>Experience working in occupied and managed buildings.</p>
-                    <p>Designed with long-term maintenance and visibility in mind.</p>
-                </div>
-            </section>
-
-            <section class="section contact" id="contact">
-                <div class="contact-panel">
-                    <div class="contact-copy">
-                        <p class="eyebrow">Contact Us</p>
-                        <h2>Looking for a reliable signage partner?</h2>
-                        <p>
-                            Whether you are handling a new development, signage replacement, or a
-                            building upgrade, this site is set up to support a direct consultation flow.
-                        </p>
-                        <p>
-                            Use the enquiry form to start a conversation about site assessment,
-                            approvals, fabrication scope, or installation planning.
-                        </p>
+                <div class="col-md-6 col-xl-3" data-reveal>
+                    <div class="process-card p-4">
+                        <div class="icon-badge mb-3"><i class="bi bi-vector-pen"></i></div>
+                        <h3 class="card-title mb-2">Design Mockup</h3>
+                        <p class="section-copy mb-0">Prepare compact presentation visuals for management review and alignment before production.</p>
                     </div>
-
-                    <form class="contact-form" id="enquiry-form">
-                        <label>
-                            <span>Name</span>
-                            <input type="text" name="name" placeholder="Your name" required>
-                        </label>
-                        <label>
-                            <span>Email</span>
-                            <input type="email" name="email" placeholder="you@example.com" required>
-                        </label>
-                        <label>
-                            <span>Project type</span>
-                            <select name="projectType" required>
-                                <option value="">Select a project type</option>
-                                <option>New development</option>
-                                <option>Replacement signage</option>
-                                <option>Building upgrade</option>
-                                <option>Wayfinding improvement</option>
-                            </select>
-                        </label>
-                        <label>
-                            <span>Project details</span>
-                            <textarea name="details" rows="5" placeholder="Tell us about your building, scope, and timeline." required></textarea>
-                        </label>
-                        <button class="button" type="submit">Send Enquiry</button>
-                        <p class="form-note" id="form-note" aria-live="polite"></p>
-                    </form>
                 </div>
-            </section>
-        </main>
-    </div>
+                <div class="col-md-6 col-xl-3" data-reveal>
+                    <div class="process-card p-4">
+                        <div class="icon-badge mb-3"><i class="bi bi-tools"></i></div>
+                        <h3 class="card-title mb-2">Fabrication</h3>
+                        <p class="section-copy mb-0">Produce indoor, outdoor, illuminated, and custom signs with consistent finishing and sizing.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xl-3" data-reveal>
+                    <div class="process-card p-4">
+                        <div class="icon-badge mb-3"><i class="bi bi-wrench-adjustable-circle"></i></div>
+                        <h3 class="card-title mb-2">Installation</h3>
+                        <p class="section-copy mb-0">Coordinate final placement, visibility checks, and handover for the completed signage package.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script src="script.js"></script>
+        <section class="container py-4 py-lg-5">
+            <div class="row align-items-end g-4 mb-4">
+                <div class="col-lg-8" data-reveal>
+                    <span class="eyebrow mb-3"><i class="bi bi-collection"></i> Product categories</span>
+                    <h2 class="section-heading mb-3">Every required signage category is already mapped into the catalogue.</h2>
+                </div>
+                <div class="col-lg-4 text-lg-end" data-reveal>
+                    <a class="btn btn-outline-brand" href="catalogue.html">View Full Catalogue</a>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Wayfinding Signs</h3><p class="section-copy mb-0">Directional signs for lobbies, corridors, drop-offs, and circulation flow.</p></div></div>
+                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Notice Boards</h3><p class="section-copy mb-0">Resident notices, policy displays, directory updates, and building announcements.</p></div></div>
+                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Safety Warning Signs</h3><p class="section-copy mb-0">Hazard communication, emergency instructions, and compliance-facing notices.</p></div></div>
+                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Indoor Signage</h3><p class="section-copy mb-0">LED signs, 3D lettering, directories, counters, and interior amenity branding.</p></div></div>
+                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Outdoor Signage</h3><p class="section-copy mb-0">Frontlit, backlit, and lightbox systems for entrances and facade communication.</p></div></div>
+                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Custom Number Signage</h3><p class="section-copy mb-0">Unit identification, room numbering, and bespoke numbering systems.</p></div></div>
+            </div>
+        </section>
+
+        <section class="container py-4 py-lg-5">
+            <div class="cta-panel p-4 p-lg-5" data-reveal>
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="eyebrow bg-transparent border border-light text-white mb-3"><i class="bi bi-send"></i> Contact-ready layout</span>
+                        <h2 class="section-heading text-white mb-3">Use this structure now, then replace placeholders with approved company copy later.</h2>
+                        <p class="section-copy mb-0">The contact form is already styled and validated on the frontend. If you want working email delivery in the next phase, a lightweight PHP handler fits this XAMPP setup cleanly.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="btn btn-brand btn-lg px-4" href="contact.html">Open Contact Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer mt-5 py-5">
+        <div class="container">
+            <div class="row g-4 align-items-end">
+                <div class="col-lg-5">
+                    <div class="footer-brand mb-2">Condo Signage</div>
+                    <p class="mb-0">Professional website starter for condominium signage, directories, warnings, and identity systems.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p class="mb-1 fw-semibold text-white">Pages</p>
+                    <div class="d-flex flex-wrap gap-3 small footer-list">
+                        <a href="about.html">About Us</a>
+                        <a href="catalogue.html">Catalogue</a>
+                        <a href="projects.html">Projects</a>
+                        <a href="services.html">Services</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 text-lg-end">
+                    <p class="mb-0">&copy; <span data-year></span> Condo Signage</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
