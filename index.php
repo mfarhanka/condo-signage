@@ -43,6 +43,15 @@ function renderSectionHeader(array $section, bool $darkText = false): void
     echo '</div>';
 }
 
+function resolveNavHref(array $item, bool $cataloguePage = false): string
+{
+    if (($item['key'] ?? '') === 'catalogue') {
+        return 'catalogue.php';
+    }
+
+    return $cataloguePage ? 'index.php' . $item['href'] : $item['href'];
+}
+
 $brand = $siteConfig['brand'];
 $meta = $siteConfig['meta'];
 $currentYear = date('Y');
@@ -88,7 +97,7 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <?php foreach ($siteConfig['nav'] as $item): ?>
-                        <li class="nav-item"><a class="nav-link" href="<?= escape($item['href']); ?>"><?= escape($item['label']); ?></a></li>
+                        <li class="nav-item"><a class="nav-link" href="<?= escape(resolveNavHref($item)); ?>"><?= escape($item['label']); ?></a></li>
                     <?php endforeach; ?>
                 </ul>
                 <a class="btn btn-brand ms-lg-4" href="#contact">Request a Quote</a>
@@ -193,6 +202,9 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
                 <?php renderSectionHeader($siteConfig['sections']['products']); ?>
                 <div class="row g-4">
                     <?php renderCardGrid($siteConfig['sections']['products']['items'], 'col-md-6 col-xl-4', 'product-card'); ?>
+                </div>
+                <div class="text-center mt-5">
+                    <a class="btn btn-brand btn-lg" href="catalogue.php">View Full Catalogue</a>
                 </div>
             </div>
         </section>

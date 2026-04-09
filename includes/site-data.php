@@ -1,5 +1,68 @@
 <?php
 
+$catalogueCategories = [
+    [
+        'id' => 'wayfinding-signs',
+        'title' => 'Wayfinding Signs',
+        'copy' => 'Directional signs for lobbies, tower cores, lift zones, parking decks, and shared circulation routes.',
+        'highlights' => ['Lift lobbies and floor directories', 'Directional arrows and landmark markers', 'Consistent branding across multiple blocks'],
+    ],
+    [
+        'id' => 'notice-boards',
+        'title' => 'Notice Boards',
+        'copy' => 'Management notice boards and communication panels for announcements, circulars, and resident updates.',
+        'highlights' => ['Indoor and semi-outdoor placements', 'Magnetic, acrylic, and lockable formats', 'Sized for management offices and common areas'],
+    ],
+    [
+        'id' => 'safety-warning-signs',
+        'title' => 'Safety Warning Signs',
+        'copy' => 'Mandatory, hazard, and warning signage designed to improve safety awareness in shared residential and commercial spaces.',
+        'highlights' => ['Fire, electrical, and caution signage', 'Clear icon-driven communication', 'Durable finishes for high-traffic environments'],
+    ],
+    [
+        'id' => 'condominium-indoor-signage',
+        'title' => 'Condominium Indoor Signage',
+        'copy' => 'Interior signage systems including LED displays and 3D lettering for reception areas, corridors, and amenities.',
+        'highlights' => ['LED feature signage', '3D lettering and branded wall signage', 'Lift lobby, corridor, and facility identification'],
+    ],
+    [
+        'id' => 'condominium-outdoor-signage',
+        'title' => 'Condominium Outdoor Signage',
+        'copy' => 'Exterior signage solutions such as frontlit, backlit, and lightbox systems engineered for visibility and weather exposure.',
+        'highlights' => ['Main entrance branding', 'Frontlit, backlit, and lightbox fabrication', 'Built for outdoor visibility and maintenance access'],
+    ],
+    [
+        'id' => 'custom-number-signage',
+        'title' => 'Custom Number Signage',
+        'copy' => 'Unit numbers, block identifiers, and customized numbering systems for clear property identification.',
+        'highlights' => ['Unit doors and parcel room labels', 'Block, floor, and bay numbering', 'Styles aligned with property branding'],
+    ],
+    [
+        'id' => 'carpark-signage',
+        'title' => 'Carpark Signage',
+        'copy' => 'Traffic and parking signage that improves flow, safety, and level recognition throughout basement and podium parking areas.',
+        'highlights' => ['Entry, exit, and directional markers', 'Reserved lot and level identification', 'Painted, mounted, and suspended options'],
+    ],
+    [
+        'id' => 'advertising-signage',
+        'title' => 'Advertising Signage',
+        'copy' => 'Promotional and branding displays for campaigns, launches, and shared-property marketing placements.',
+        'highlights' => ['Promotional display panels', 'Short-term and long-term campaign formats', 'Suitable for foyers, event zones, and storefronts'],
+    ],
+    [
+        'id' => 'door-signage',
+        'title' => 'Door Signage',
+        'copy' => 'Door signs and room identifiers that make office, utility, and facility access clearer for residents and visitors.',
+        'highlights' => ['Office, service room, and utility labels', 'Readable at close range and corridor distance', 'Available in engraved, acrylic, and metal finishes'],
+    ],
+    [
+        'id' => 'amenity-signage',
+        'title' => 'Amenity Signage',
+        'copy' => 'Facility markers and rules signage for gyms, pools, halls, lounges, and other shared amenity areas.',
+        'highlights' => ['Amenity naming and rule boards', 'Designed to match shared-space interiors', 'Supports better guest and resident navigation'],
+    ],
+];
+
 $siteConfig = [
     'brand' => [
         'name' => 'Condo Signage',
@@ -13,12 +76,12 @@ $siteConfig = [
         'description' => 'Condo Signage delivers professional signage solutions for condominiums and commercial properties, from design and fabrication to installation.',
     ],
     'nav' => [
-        ['label' => 'Home', 'href' => '#home'],
-        ['label' => 'About Us', 'href' => '#about'],
-        ['label' => 'Product Catalogue', 'href' => '#products'],
-        ['label' => 'Contact Us', 'href' => '#contact'],
-        ['label' => 'Projects', 'href' => '#projects'],
-        ['label' => 'Services', 'href' => '#services'],
+        ['key' => 'home', 'label' => 'Home', 'href' => '#home'],
+        ['key' => 'about', 'label' => 'About Us', 'href' => '#about'],
+        ['key' => 'catalogue', 'label' => 'Product Catalogue', 'href' => '#products'],
+        ['key' => 'contact', 'label' => 'Contact Us', 'href' => '#contact'],
+        ['key' => 'projects', 'label' => 'Projects', 'href' => '#projects'],
+        ['key' => 'services', 'label' => 'Services', 'href' => '#services'],
     ],
     'heroSlides' => [
         [
@@ -28,7 +91,7 @@ $siteConfig = [
             'titleTag' => 'h1',
             'copy' => 'Condo Signage helps property managers and developers present a polished building identity with compliant, durable, and management-approved signage systems.',
             'actions' => [
-                ['label' => 'Explore Products', 'href' => '#products', 'className' => 'btn btn-brand btn-lg'],
+                ['label' => 'Explore Products', 'href' => 'catalogue.php', 'className' => 'btn btn-brand btn-lg'],
                 ['label' => 'Learn More', 'href' => '#about', 'className' => 'btn btn-outline-light btn-lg'],
             ],
             'panel' => [
@@ -79,17 +142,13 @@ $siteConfig = [
             'tag' => 'Products',
             'title' => 'Signage categories for every key touchpoint.',
             'copy' => 'Our product range is structured to support navigation, safety, communication, and brand presentation across the entire property.',
-            'items' => [
-                ['title' => 'Wayfinding Signs', 'copy' => 'Directional signs for lobbies, towers, parking levels, facilities, and common access routes.'],
-                ['title' => 'Notice Boards', 'copy' => 'Management notice boards and communication panels for public updates and building announcements.'],
-                ['title' => 'Safety Warning Signs', 'copy' => 'Mandatory and caution signage for safe operations in shared residential and commercial spaces.'],
-                ['title' => 'Indoor Signage', 'copy' => 'Elegant room labels, floor directories, lift lobby signs, and resident-facing building information.'],
-                ['title' => 'Outdoor Signage', 'copy' => 'Weather-ready signs for entrances, facility zones, parking access, and external property branding.'],
-                ['title' => 'Custom Number Signage', 'copy' => 'Unit numbers, block identifiers, parking bay numbering, and other custom identification systems.'],
-                ['title' => 'Car Park Signage', 'copy' => 'Traffic flow, level markers, reserved parking signs, and direction systems for safer circulation.'],
-                ['title' => 'Advertising Signage', 'copy' => 'Branding displays, promotional installations, and communication visuals for shared environments.'],
-                ['title' => 'Door & Amenity Signage', 'copy' => 'Room labels, facility markers, and amenity signs that elevate clarity and presentation.'],
-            ],
+            'items' => array_map(
+                static fn(array $category): array => [
+                    'title' => $category['title'],
+                    'copy' => $category['copy'],
+                ],
+                $catalogueCategories
+            ),
         ],
         'projects' => [
             'tag' => 'Projects',
@@ -101,6 +160,13 @@ $siteConfig = [
                 ['title' => 'Amenity Signage Sets', 'copy' => 'Consistent signage packages for pools, gyms, multipurpose halls, and other shared facilities.'],
             ],
         ],
+    ],
+    'catalogue' => [
+        'tag' => 'Product Catalogue',
+        'title' => 'Signage categories arranged for condominium operations.',
+        'copy' => 'Browse the full catalogue by category and jump directly to the signage systems your property needs.',
+        'intro' => 'This page groups our condominium signage solutions into practical categories so management teams can review scope, function, and likely applications faster.',
+        'categories' => $catalogueCategories,
     ],
     'services' => [
         'tag' => 'Services',
