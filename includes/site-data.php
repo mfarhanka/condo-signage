@@ -128,19 +128,36 @@ $siteConfig = [
     ],
     'contact' => [
         'tag' => 'Contact Us',
-        'title' => 'Let’s discuss your signage requirements.',
-        'copy' => 'If you need signage for a condominium, mixed development, or commercial building, our team can recommend suitable options for layout, material, and installation.',
-        'details' => [
-            ['label' => 'Company', 'value' => 'A&T Media Sdn. Bhd.'],
-            ['label' => 'Coverage', 'value' => 'Kuala Lumpur, Johor, and surrounding project locations'],
-            ['label' => 'Website', 'value' => 'www.antsignage.com'],
+        'title' => 'Reach Our Team',
+        'copy' => 'Get in touch with our headquarters team for enquiries, quotation requests, and project discussions.',
+        'branchTabs' => [
+            ['label' => 'Branch', 'active' => false],
+            ['label' => 'HQ', 'active' => true],
+            ['label' => 'Branch SG', 'active' => false],
+        ],
+        'office' => [
+            'name' => 'A&T Media Sdn. Bhd.',
+            'registration' => '202501057902 (1659308-W)',
+            'addressLines' => [
+                '16, Jalan Nilam 1/6, Taman Teknologi Tinggi Subang,',
+                '47500 Subang Jaya, Selangor, Malaysia.',
+            ],
+        ],
+        'contactBlocks' => [
+            ['label' => 'Contact No', 'value' => '+6016-701 3295'],
+            ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
+        ],
+        'whatsApp' => [
+            'label' => 'WhatsApp Us',
+            'subLabel' => 'Click to chat',
+            'href' => 'https://wa.me/60167013295',
         ],
         'formFields' => [
-            ['id' => 'name', 'label' => 'Name', 'type' => 'text', 'placeholder' => 'Your name', 'columnClass' => 'col-md-6'],
-            ['id' => 'company', 'label' => 'Company', 'type' => 'text', 'placeholder' => 'Company name', 'columnClass' => 'col-md-6'],
-            ['id' => 'email', 'label' => 'Email', 'type' => 'email', 'placeholder' => 'name@example.com', 'columnClass' => 'col-md-6'],
-            ['id' => 'phone', 'label' => 'Phone', 'type' => 'tel', 'placeholder' => 'Your phone number', 'columnClass' => 'col-md-6'],
-            ['id' => 'message', 'label' => 'Project Details', 'type' => 'textarea', 'placeholder' => 'Tell us about your signage requirements', 'columnClass' => 'col-12', 'rows' => 5],
+            ['id' => 'name', 'label' => 'Name*', 'type' => 'text', 'placeholder' => 'Enter name here', 'columnClass' => 'col-12'],
+            ['id' => 'phone', 'label' => 'Contact Number*', 'type' => 'tel', 'placeholder' => 'Enter contact number here', 'columnClass' => 'col-md-7'],
+            ['id' => 'email', 'label' => 'Email*', 'type' => 'email', 'placeholder' => 'Enter email address here', 'columnClass' => 'col-md-5'],
+            ['id' => 'attachment', 'label' => 'Upload File (optional)', 'type' => 'file', 'columnClass' => 'col-12'],
+            ['id' => 'message', 'label' => 'Message (optional)', 'type' => 'textarea', 'placeholder' => 'Enter message here', 'columnClass' => 'col-12', 'rows' => 5],
         ],
         'submitLabel' => 'Send Inquiry',
     ],

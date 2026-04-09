@@ -240,21 +240,40 @@ $currentYear = date('Y');
 
         <section id="contact" class="section-space contact-section">
             <div class="container">
-                <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-5">
                         <span class="section-tag"><?= escape($siteConfig['contact']['tag']); ?></span>
                         <h2 class="section-title"><?= escape($siteConfig['contact']['title']); ?></h2>
                         <p class="section-copy"><?= escape($siteConfig['contact']['copy']); ?></p>
+                        <div class="branch-tabs" role="tablist" aria-label="Contact branches">
+                            <?php foreach ($siteConfig['contact']['branchTabs'] as $tab): ?>
+                                <button type="button" class="branch-tab <?= $tab['active'] ? 'is-active' : ''; ?>" aria-pressed="<?= $tab['active'] ? 'true' : 'false'; ?>"><?= escape($tab['label']); ?></button>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="contact-office-card">
+                            <h3><?= escape($siteConfig['contact']['office']['name']); ?></h3>
+                            <p class="contact-registration"><?= escape($siteConfig['contact']['office']['registration']); ?></p>
+                            <?php foreach ($siteConfig['contact']['office']['addressLines'] as $line): ?>
+                                <p class="contact-address-line"><?= escape($line); ?></p>
+                            <?php endforeach; ?>
+                        </div>
                         <div class="contact-list">
-                            <?php foreach ($siteConfig['contact']['details'] as $detail): ?>
+                            <?php foreach ($siteConfig['contact']['contactBlocks'] as $detail): ?>
                                 <div>
                                     <strong><?= escape($detail['label']); ?></strong>
                                     <span><?= escape($detail['value']); ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                        <a class="whatsapp-card" href="<?= escape($siteConfig['contact']['whatsApp']['href']); ?>" target="_blank" rel="noreferrer">
+                            <span class="whatsapp-icon">W</span>
+                            <span>
+                                <strong><?= escape($siteConfig['contact']['whatsApp']['label']); ?></strong>
+                                <small><?= escape($siteConfig['contact']['whatsApp']['subLabel']); ?></small>
+                            </span>
+                        </a>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-7">
                         <div class="contact-card">
                             <form>
                                 <div class="row g-3">
@@ -263,6 +282,8 @@ $currentYear = date('Y');
                                             <label for="<?= escape($field['id']); ?>" class="form-label"><?= escape($field['label']); ?></label>
                                             <?php if ($field['type'] === 'textarea'): ?>
                                                 <textarea class="form-control" id="<?= escape($field['id']); ?>" rows="<?= escape((string) ($field['rows'] ?? 5)); ?>" placeholder="<?= escape($field['placeholder']); ?>"></textarea>
+                                            <?php elseif ($field['type'] === 'file'): ?>
+                                                <input type="file" class="form-control form-control-file" id="<?= escape($field['id']); ?>">
                                             <?php else: ?>
                                                 <input type="<?= escape($field['type']); ?>" class="form-control" id="<?= escape($field['id']); ?>" placeholder="<?= escape($field['placeholder']); ?>">
                                             <?php endif; ?>

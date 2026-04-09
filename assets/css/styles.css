@@ -457,6 +457,24 @@ p {
     margin-top: 2rem;
 }
 
+.contact-office-card {
+    margin-top: 1.5rem;
+}
+
+.contact-office-card h3 {
+    font-size: 2.2rem;
+    text-transform: none;
+}
+
+.contact-registration {
+    margin-bottom: 1rem;
+    color: var(--brand-grey);
+}
+
+.contact-address-line {
+    margin-bottom: 0.35rem;
+}
+
 .contact-list div {
     padding-bottom: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -472,11 +490,73 @@ p {
     color: #1f2328;
 }
 
+.branch-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.branch-tab {
+    min-width: 5.5rem;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #111;
+    border-radius: 0.6rem;
+    background: #fff;
+    color: #111;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.branch-tab.is-active {
+    background: #111;
+    color: #fff;
+}
+
+.whatsapp-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border-radius: 1.2rem;
+    background: #28b34b;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 16px 30px rgba(40, 179, 75, 0.22);
+}
+
+.whatsapp-card strong,
+.whatsapp-card small {
+    display: block;
+    color: #fff;
+}
+
+.whatsapp-card small {
+    font-size: 0.95rem;
+}
+
+.whatsapp-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    font-weight: 700;
+}
+
 .form-control {
     min-height: 3rem;
     border-radius: 0.85rem;
     border-color: rgba(0, 0, 0, 0.12);
     padding: 0.85rem 1rem;
+}
+
+.form-control-file {
+    padding: 0.65rem 0.85rem;
 }
 
 .form-control:focus {
