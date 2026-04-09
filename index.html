@@ -1,97 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Condo Signage | Professional Sign Systems</title>
-    <meta name="description" content="Compact professional website for condominium signage, wayfinding systems, warning signs, and custom sign fabrication.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Condo Signage | Professional Signage Solutions</title>
+    <meta name="description" content="Condo Signage delivers professional signage solutions for condominiums and commercial properties, from design and fabrication to installation.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="assets/css/site.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body data-page="home">
-    <nav class="navbar navbar-expand-lg fixed-top site-navbar">
-        <div class="container py-2">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <span class="brand-mark">CS</span>
-                <span>Condo Signage</span>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+    <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="#home">
+                <img src="logo.jpg" alt="Condo Signage logo">
+                <span>
+                    <small class="brand-kicker">A&amp;T Media</small>
+                    Condo Signage
+                </span>
             </a>
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="siteNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-                    <li class="nav-item"><a class="nav-link" data-nav="home" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" data-nav="about" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" data-nav="catalogue" href="catalogue.html">Product Catalogue</a></li>
-                    <li class="nav-item"><a class="nav-link" data-nav="projects" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" data-nav="services" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" data-nav="contact" href="contact.html">Contact Us</a></li>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Product Catalogue</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 </ul>
+                <a class="btn btn-brand ms-lg-4" href="#contact">Request a Quote</a>
             </div>
         </div>
     </nav>
 
-    <main class="page-shell">
-        <section class="container pb-4 pb-lg-5">
-            <div class="hero-card">
-                <div class="row g-0 align-items-stretch">
-                    <div class="col-lg-7">
-                        <div class="p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
-                            <span class="eyebrow mb-3"><i class="bi bi-signpost-split"></i> Compact professional signage site</span>
-                            <h1 class="display-title display-4 mb-3">Sign systems for condominiums, carparks, amenities, and shared spaces.</h1>
-                            <p class="lede mb-4">A clean first-version website for presenting building signage categories, core services, and a direct enquiry path. Replace the placeholders with approved company copy when ready.</p>
-                            <div class="hero-meta mb-4">
-                                <div class="hero-meta-item">
-                                    <span class="hero-meta-label">Project Fit</span>
-                                    <span class="hero-meta-value">Residential Properties</span>
-                                </div>
-                                <div class="hero-meta-item">
-                                    <span class="hero-meta-label">Coverage</span>
-                                    <span class="hero-meta-value">Indoor + Outdoor</span>
-                                </div>
-                                <div class="hero-meta-item">
-                                    <span class="hero-meta-label">Focus</span>
-                                    <span class="hero-meta-value">Clear Navigation</span>
+    <header id="home" class="hero-section">
+        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active hero-slide slide-one">
+                    <div class="container">
+                        <div class="row min-vh-100 align-items-center pt-5">
+                            <div class="col-lg-7">
+                                <span class="section-tag">Professional Signage Solutions</span>
+                                <h1>Clear, durable signage designed for condominium environments.</h1>
+                                <p class="lead">Condo Signage helps property managers and developers present a polished building identity with compliant, durable, and management-approved signage systems.</p>
+                                <div class="d-flex flex-wrap gap-3 mt-4">
+                                    <a class="btn btn-brand btn-lg" href="#products">Explore Products</a>
+                                    <a class="btn btn-outline-light btn-lg" href="#about">Learn More</a>
                                 </div>
                             </div>
-                            <div class="d-flex flex-wrap gap-2 mb-4">
-                                <span class="feature-chip"><i class="bi bi-check2-circle"></i> Bootstrap 5 layout</span>
-                                <span class="feature-chip"><i class="bi bi-check2-circle"></i> Mobile-ready structure</span>
-                                <span class="feature-chip"><i class="bi bi-check2-circle"></i> Compact page density</span>
-                            </div>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a class="btn btn-brand btn-lg px-4" href="catalogue.html">Browse Catalogue</a>
-                                <a class="btn btn-outline-brand btn-lg px-4" href="contact.html">Request Enquiry</a>
+                            <div class="col-lg-5 d-none d-lg-block">
+                                <div class="hero-panel">
+                                    <h2>Built for modern properties</h2>
+                                    <p>Wayfinding, safety signage, notice boards, amenity signs, and custom solutions produced with consistent branding and reliable materials.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="hero-visual p-4 p-md-5 d-flex flex-column justify-content-between">
-                            <div class="hero-stack">
-                                <p class="text-uppercase small fw-bold mb-3 opacity-75">Core focus</p>
-                                <div class="d-grid gap-2">
-                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-compass"></i> Wayfinding clarity</span>
-                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-building"></i> Indoor and outdoor sign systems</span>
-                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-car-front"></i> Carpark and unit identification</span>
-                                    <span class="detail-pill bg-transparent border border-light text-white"><i class="bi bi-exclamation-triangle"></i> Safety and notice communication</span>
-                                </div>
-                            </div>
-                            <div class="hero-stack mt-4">
-                                <div class="row g-3">
-                                    <div class="col-6">
-                                        <div class="metric-card bg-white text-dark">
-                                            <div class="metric-value">10</div>
-                                            <p class="mb-0 text-secondary small">Catalogue categories prepared</p>
+                </div>
+
+                <div class="carousel-item hero-slide slide-two">
+                    <div class="container">
+                        <div class="row min-vh-100 align-items-center pt-5">
+                            <div class="col-lg-7">
+                                <span class="section-tag">From Assessment To Installation</span>
+                                <h2>One team handling planning, fabrication, and on-site execution.</h2>
+                                <p class="lead">We support each stage of the signage process, from site assessment and design mockups to fabrication and professional installation.</p>
+                                <div class="hero-metrics row g-3 mt-2">
+                                    <div class="col-sm-4">
+                                        <div class="metric-card">
+                                            <strong>01</strong>
+                                            <span>Site Assessment</span>
                                         </div>
                                     </div>
-                                    <div class="col-6">
-                                        <div class="metric-card bg-white text-dark">
-                                            <div class="metric-value">6</div>
-                                            <p class="mb-0 text-secondary small">Core website pages</p>
+                                    <div class="col-sm-4">
+                                        <div class="metric-card">
+                                            <strong>02</strong>
+                                            <span>Design Mockup</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="metric-card">
+                                            <strong>03</strong>
+                                            <span>Installation</span>
                                         </div>
                                     </div>
                                 </div>
@@ -99,128 +99,297 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="container py-4 py-lg-5">
-            <div class="row align-items-end g-4 mb-4">
-                <div class="col-lg-7" data-reveal>
-                    <span class="eyebrow mb-3"><i class="bi bi-grid"></i> Quick overview</span>
-                    <h2 class="section-heading mb-3">Built to explain your offering quickly and look credible on first contact.</h2>
-                    <p class="section-copy section-intro mb-0">This first release uses concise placeholder text and a clear page structure so your team can review the layout before final company content, photography, and project references are inserted.</p>
-                </div>
-                <div class="col-lg-5" data-reveal>
-                    <div class="glass-card p-4">
-                        <div class="row g-3">
-                            <div class="col-6">
-                                <div class="metric-card shadow-none bg-transparent border">
-                                    <div class="metric-value">24h</div>
-                                    <p class="mb-0 text-secondary small">Design review turnaround placeholder</p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="metric-card shadow-none bg-transparent border">
-                                    <div class="metric-value">4</div>
-                                    <p class="mb-0 text-secondary small">Service steps highlighted</p>
-                                </div>
+                <div class="carousel-item hero-slide slide-three">
+                    <div class="container">
+                        <div class="row min-vh-100 align-items-center pt-5">
+                            <div class="col-lg-7">
+                                <span class="section-tag">Trusted Product Range</span>
+                                <h2>Indoor and outdoor signage tailored to residential and commercial settings.</h2>
+                                <p class="lead">Our product range covers notice boards, safety warning signs, door signage, car park signage, number plates, and custom branding displays.</p>
+                                <a class="btn btn-brand btn-lg mt-3" href="#contact">Talk To Our Team</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-6 col-xl-3" data-reveal>
-                    <div class="process-card p-4">
-                        <div class="icon-badge mb-3"><i class="bi bi-search"></i></div>
-                        <h3 class="card-title mb-2">Site Assessment</h3>
-                        <p class="section-copy mb-0">Capture entry points, routes, amenities, regulatory needs, and sign placement constraints.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3" data-reveal>
-                    <div class="process-card p-4">
-                        <div class="icon-badge mb-3"><i class="bi bi-vector-pen"></i></div>
-                        <h3 class="card-title mb-2">Design Mockup</h3>
-                        <p class="section-copy mb-0">Prepare compact presentation visuals for management review and alignment before production.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3" data-reveal>
-                    <div class="process-card p-4">
-                        <div class="icon-badge mb-3"><i class="bi bi-tools"></i></div>
-                        <h3 class="card-title mb-2">Fabrication</h3>
-                        <p class="section-copy mb-0">Produce indoor, outdoor, illuminated, and custom signs with consistent finishing and sizing.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-3" data-reveal>
-                    <div class="process-card p-4">
-                        <div class="icon-badge mb-3"><i class="bi bi-wrench-adjustable-circle"></i></div>
-                        <h3 class="card-title mb-2">Installation</h3>
-                        <p class="section-copy mb-0">Coordinate final placement, visibility checks, and handover for the completed signage package.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
 
-        <section class="container py-4 py-lg-5">
-            <div class="row align-items-end g-4 mb-4">
-                <div class="col-lg-8" data-reveal>
-                    <span class="eyebrow mb-3"><i class="bi bi-collection"></i> Product categories</span>
-                    <h2 class="section-heading mb-3">Every required signage category is already mapped into the catalogue.</h2>
-                </div>
-                <div class="col-lg-4 text-lg-end" data-reveal>
-                    <a class="btn btn-outline-brand" href="catalogue.html">View Full Catalogue</a>
-                </div>
-            </div>
-            <div class="row g-3">
-                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Wayfinding Signs</h3><p class="section-copy mb-0">Directional signs for lobbies, corridors, drop-offs, and circulation flow.</p></div></div>
-                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Notice Boards</h3><p class="section-copy mb-0">Resident notices, policy displays, directory updates, and building announcements.</p></div></div>
-                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Safety Warning Signs</h3><p class="section-copy mb-0">Hazard communication, emergency instructions, and compliance-facing notices.</p></div></div>
-                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Indoor Signage</h3><p class="section-copy mb-0">LED signs, 3D lettering, directories, counters, and interior amenity branding.</p></div></div>
-                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Outdoor Signage</h3><p class="section-copy mb-0">Frontlit, backlit, and lightbox systems for entrances and facade communication.</p></div></div>
-                <div class="col-sm-6 col-xl-4" data-reveal><div class="category-card p-4"><h3 class="card-title mb-2">Custom Number Signage</h3><p class="section-copy mb-0">Unit identification, room numbering, and bespoke numbering systems.</p></div></div>
-            </div>
-        </section>
-
-        <section class="container py-4 py-lg-5">
-            <div class="cta-panel p-4 p-lg-5" data-reveal>
-                <div class="row align-items-center g-4">
+    <main>
+        <section class="py-5 intro-strip">
+            <div class="container">
+                <div class="row g-4 align-items-center">
                     <div class="col-lg-8">
-                        <span class="eyebrow bg-transparent border border-light text-white mb-3"><i class="bi bi-send"></i> Contact-ready layout</span>
-                        <h2 class="section-heading text-white mb-3">Use this structure now, then replace placeholders with approved company copy later.</h2>
-                        <p class="section-copy mb-0">The contact form is already styled and validated on the frontend. If you want working email delivery in the next phase, a lightweight PHP handler fits this XAMPP setup cleanly.</p>
+                        <p class="mb-0">Condo Signage is presented by A&amp;T Media Sdn. Bhd., an experienced printing and advertising company serving condominiums, commercial buildings, and managed properties.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
-                        <a class="btn btn-brand btn-lg px-4" href="contact.html">Open Contact Page</a>
+                        <a class="btn btn-outline-dark" href="#contact">Get Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-space bg-light-subtle">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <span class="section-tag text-dark">About Us</span>
+                        <h2 class="section-title text-dark">Reliable signage support for property management teams.</h2>
+                        <p>A&amp;T Media Sdn. Bhd. provides signage, printing, and advertising solutions with a strong focus on quality presentation and long-term durability. Our team works closely with building owners, management offices, and developers to ensure each sign fits the property environment and communication needs.</p>
+                        <p>From condominium directories and notice boards to safety and amenity signs, we create signage that looks professional, communicates clearly, and performs well in daily use.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-card">
+                            <div class="row g-4">
+                                <div class="col-sm-6">
+                                    <div class="feature-box">
+                                        <h3>Professional Finish</h3>
+                                        <p>Clean layouts, consistent branding, and durable materials suited for managed properties.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="feature-box">
+                                        <h3>End-To-End Service</h3>
+                                        <p>Site review, design mockup, fabrication, and installation managed by one team.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="feature-box">
+                                        <h3>Indoor &amp; Outdoor</h3>
+                                        <p>Solutions for lobbies, corridors, lift areas, car parks, perimeters, and entry points.</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="feature-box">
+                                        <h3>Custom Production</h3>
+                                        <p>Flexible specifications for sizes, materials, colors, and installation requirements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="section-space products-section">
+            <div class="container">
+                <div class="row justify-content-between align-items-end mb-4">
+                    <div class="col-lg-7">
+                        <span class="section-tag">Products</span>
+                        <h2 class="section-title">Signage categories for every key touchpoint.</h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="section-copy mb-0">Our product range is structured to support navigation, safety, communication, and brand presentation across the entire property.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Wayfinding Signs</h3>
+                            <p>Directional signs for lobbies, towers, parking levels, facilities, and common access routes.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Notice Boards</h3>
+                            <p>Management notice boards and communication panels for public updates and building announcements.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Safety Warning Signs</h3>
+                            <p>Mandatory and caution signage for safe operations in shared residential and commercial spaces.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Indoor Signage</h3>
+                            <p>Elegant room labels, floor directories, lift lobby signs, and resident-facing building information.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Outdoor Signage</h3>
+                            <p>Weather-ready signs for entrances, facility zones, parking access, and external property branding.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Custom Number Signage</h3>
+                            <p>Unit numbers, block identifiers, parking bay numbering, and other custom identification systems.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Car Park Signage</h3>
+                            <p>Traffic flow, level markers, reserved parking signs, and direction systems for safer circulation.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Advertising Signage</h3>
+                            <p>Branding displays, promotional installations, and communication visuals for shared environments.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Door &amp; Amenity Signage</h3>
+                            <p>Room labels, facility markers, and amenity signs that elevate clarity and presentation.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-space bg-light-subtle">
+            <div class="container">
+                <div class="row justify-content-between align-items-end mb-4">
+                    <div class="col-lg-7">
+                        <span class="section-tag text-dark">Projects</span>
+                        <h2 class="section-title text-dark">Selected signage applications for managed properties.</h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="section-copy mb-0">Representative project categories show how Condo Signage supports different property areas with coordinated visual systems.</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Lobby Directories</h3>
+                            <p>Directory systems and identity signage for entrances, reception spaces, and shared arrival zones.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Car Park Navigation</h3>
+                            <p>Level identification, directional signs, and reserved bay systems for easier vehicle movement.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4">
+                        <article class="product-card">
+                            <h3>Amenity Signage Sets</h3>
+                            <p>Consistent signage packages for pools, gyms, multipurpose halls, and other shared facilities.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section-space process-section bg-dark text-white">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-5">
+                        <span class="section-tag">Our Process</span>
+                        <h2 class="section-title">A straightforward workflow from brief to installation.</h2>
+                        <p class="section-copy">We keep the process practical and transparent so property teams can review designs, approvals, and execution with confidence.</p>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row g-3">
+                            <div class="col-md-6 col-xl-3">
+                                <div class="process-card">
+                                    <span>01</span>
+                                    <h3>Site Assessment</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="process-card">
+                                    <span>02</span>
+                                    <h3>Design Mockup</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="process-card">
+                                    <span>03</span>
+                                    <h3>Fabrication</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <div class="process-card">
+                                    <span>04</span>
+                                    <h3>Installation</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-space contact-section">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <span class="section-tag">Contact Us</span>
+                        <h2 class="section-title">Let’s discuss your signage requirements.</h2>
+                        <p class="section-copy">If you need signage for a condominium, mixed development, or commercial building, our team can recommend suitable options for layout, material, and installation.</p>
+                        <div class="contact-list">
+                            <div>
+                                <strong>Company</strong>
+                                <span>A&amp;T Media Sdn. Bhd.</span>
+                            </div>
+                            <div>
+                                <strong>Coverage</strong>
+                                <span>Kuala Lumpur, Johor, and surrounding project locations</span>
+                            </div>
+                            <div>
+                                <strong>Website</strong>
+                                <span>www.antsignage.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-card">
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Your name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="company" class="form-label">Company</label>
+                                        <input type="text" class="form-control" id="company" placeholder="Company name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="phone" placeholder="Your phone number">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Project Details</label>
+                                        <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your signage requirements"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-brand w-100">Send Inquiry</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer mt-5 py-5">
-        <div class="container">
-            <div class="row g-4 align-items-end">
-                <div class="col-lg-5">
-                    <div class="footer-brand mb-2">Condo Signage</div>
-                    <p class="mb-0">Professional website starter for condominium signage, directories, warnings, and identity systems.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p class="mb-1 fw-semibold text-white">Pages</p>
-                    <div class="d-flex flex-wrap gap-3 small footer-list">
-                        <a href="about.html">About Us</a>
-                        <a href="catalogue.html">Catalogue</a>
-                        <a href="projects.html">Projects</a>
-                        <a href="services.html">Services</a>
-                        <a href="contact.html">Contact Us</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 text-lg-end">
-                    <p class="mb-0">&copy; <span data-year></span> Condo Signage</p>
-                </div>
-            </div>
+    <footer class="site-footer py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+            <p class="mb-0">&copy; 2026 Condo Signage by A&amp;T Media Sdn. Bhd. All rights reserved.</p>
+            <p class="mb-0">Professional condominium and commercial signage solutions.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="assets/js/site.js"></script>
 </body>
 </html>
