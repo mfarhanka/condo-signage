@@ -200,6 +200,7 @@ $currentYear = date('Y');
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-5">
                         <span class="section-tag"><?= escape($siteConfig['services']['tag']); ?></span>
+                        <p class="service-eyebrow mb-2"><?= escape($siteConfig['services']['eyebrow']); ?></p>
                         <h2 class="section-title"><?= escape($siteConfig['services']['title']); ?></h2>
                         <p class="section-copy"><?= escape($siteConfig['services']['copy']); ?></p>
                     </div>
@@ -210,9 +211,28 @@ $currentYear = date('Y');
                                     <div class="process-card">
                                         <span><?= escape($step['number']); ?></span>
                                         <h3><?= escape($step['title']); ?></h3>
+                                        <p><?= escape($step['copy']); ?></p>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-4 mt-4 align-items-start">
+                    <div class="col-lg-7">
+                        <div class="services-detail-card">
+                            <ul class="service-highlight-list mb-0">
+                                <?php foreach ($siteConfig['services']['highlights'] as $highlight): ?>
+                                    <li><?= escape($highlight); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="services-cta-card">
+                            <h3><?= escape($siteConfig['services']['ctaTitle']); ?></h3>
+                            <p><?= escape($siteConfig['services']['ctaCopy']); ?></p>
+                            <a class="btn btn-brand" href="<?= escape($siteConfig['services']['ctaLinkHref']); ?>"><?= escape($siteConfig['services']['ctaLinkLabel']); ?></a>
                         </div>
                     </div>
                 </div>

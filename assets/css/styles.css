@@ -365,11 +365,47 @@ p {
     border: 1px solid var(--brand-border);
 }
 
+.process-card p,
+.service-highlight-list li,
+.services-cta-card p,
+.service-eyebrow {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .process-card h3,
 .process-section .section-copy,
 .process-section .section-title,
 .process-section .section-tag {
     color: #fff;
+}
+
+.service-eyebrow {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.services-detail-card,
+.services-cta-card {
+    height: 100%;
+    padding: 1.75rem;
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--brand-border);
+}
+
+.service-highlight-list {
+    padding-left: 1.2rem;
+}
+
+.service-highlight-list li + li {
+    margin-top: 0.75rem;
+}
+
+.services-cta-card h3 {
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 .contact-section {
