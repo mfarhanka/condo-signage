@@ -279,13 +279,29 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <a class="whatsapp-card" data-contact-whatsapp href="<?= escape($activeBranch['whatsApp']['href']); ?>" target="_blank" rel="noreferrer">
-                            <span class="whatsapp-icon">W</span>
-                            <span>
-                                <strong data-contact-whatsapp-label><?= escape($activeBranch['whatsApp']['label']); ?></strong>
-                                <small data-contact-whatsapp-sublabel><?= escape($activeBranch['whatsApp']['subLabel']); ?></small>
-                            </span>
-                        </a>
+                        <div class="contact-actions">
+                            <a class="contact-action-card" data-contact-phone href="<?= escape($activeBranch['quickActions']['phone']['href']); ?>">
+                                <span class="contact-action-icon">P</span>
+                                <span>
+                                    <strong data-contact-phone-label><?= escape($activeBranch['quickActions']['phone']['label']); ?></strong>
+                                    <small data-contact-phone-value><?= escape($activeBranch['quickActions']['phone']['value']); ?></small>
+                                </span>
+                            </a>
+                            <a class="contact-action-card" data-contact-email href="<?= escape($activeBranch['quickActions']['email']['href']); ?>">
+                                <span class="contact-action-icon">@</span>
+                                <span>
+                                    <strong data-contact-email-label><?= escape($activeBranch['quickActions']['email']['label']); ?></strong>
+                                    <small data-contact-email-value><?= escape($activeBranch['quickActions']['email']['value']); ?></small>
+                                </span>
+                            </a>
+                            <a class="whatsapp-card" data-contact-whatsapp href="<?= escape($activeBranch['whatsApp']['href']); ?>" target="_blank" rel="noreferrer">
+                                <span class="whatsapp-icon">W</span>
+                                <span>
+                                    <strong data-contact-whatsapp-label><?= escape($activeBranch['whatsApp']['label']); ?></strong>
+                                    <small data-contact-whatsapp-sublabel><?= escape($activeBranch['whatsApp']['subLabel']); ?></small>
+                                </span>
+                            </a>
+                        </div>
                     </div>
                     <div class="col-lg-7">
                         <div class="contact-card">

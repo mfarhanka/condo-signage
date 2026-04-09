@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const whatsappCard = document.querySelector("[data-contact-whatsapp]");
     const whatsappLabel = document.querySelector("[data-contact-whatsapp-label]");
     const whatsappSubLabel = document.querySelector("[data-contact-whatsapp-sublabel]");
+    const phoneCard = document.querySelector("[data-contact-phone]");
+    const phoneLabel = document.querySelector("[data-contact-phone-label]");
+    const phoneValue = document.querySelector("[data-contact-phone-value]");
+    const emailCard = document.querySelector("[data-contact-email]");
+    const emailLabel = document.querySelector("[data-contact-email-label]");
+    const emailValue = document.querySelector("[data-contact-email-value]");
 
     const renderContactBlocks = (items) => {
         if (!contactBlocks) {
@@ -68,6 +74,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         renderAddressLines(branch.office.addressLines || []);
         renderContactBlocks(branch.contactBlocks || []);
+
+        if (phoneCard) {
+            phoneCard.href = branch.quickActions.phone.href;
+        }
+
+        if (phoneLabel) {
+            phoneLabel.textContent = branch.quickActions.phone.label;
+        }
+
+        if (phoneValue) {
+            phoneValue.textContent = branch.quickActions.phone.value;
+        }
+
+        if (emailCard) {
+            emailCard.href = branch.quickActions.email.href;
+        }
+
+        if (emailLabel) {
+            emailLabel.textContent = branch.quickActions.email.label;
+        }
+
+        if (emailValue) {
+            emailValue.textContent = branch.quickActions.email.value;
+        }
 
         if (whatsappCard) {
             whatsappCard.href = branch.whatsApp.href;

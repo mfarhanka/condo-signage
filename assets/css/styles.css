@@ -506,29 +506,48 @@ p {
     min-width: 5.5rem;
     padding: 0.8rem 1.2rem;
     border: 2px solid #111;
-    border-radius: 0.6rem;
-    background: #fff;
-    color: #111;
-    font-family: "Barlow Condensed", sans-serif;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+
+.contact-actions {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-.branch-tab.is-active {
+.contact-action-card,
+    border-radius: 0.6rem;
+    display: inline-flex;
+    color: #111;
+    font-family: "Barlow Condensed", sans-serif;
+    text-transform: uppercase;
+}
+    color: #fff;
     background: #111;
+}
+
+.contact-action-card {
+    background: #111;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16);
+}
+
+.whatsapp-card {
+    background: #28b34b;
     color: #fff;
 }
 
+.contact-action-card strong,
+.contact-action-card small,
 .whatsapp-card {
     display: inline-flex;
     align-items: center;
     gap: 0.9rem;
     margin-top: 1.5rem;
     padding: 1rem 1.25rem;
+.contact-action-card small,
     border-radius: 1.2rem;
     background: #28b34b;
     color: #fff;
     text-decoration: none;
+.contact-action-icon,
     box-shadow: 0 16px 30px rgba(40, 179, 75, 0.22);
 }
 

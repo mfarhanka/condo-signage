@@ -147,6 +147,10 @@ $siteConfig = [
                     ['label' => 'Contact No', 'value' => '+6016-701 3295'],
                     ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
                 ],
+                'quickActions' => [
+                    'phone' => ['label' => 'Call Us', 'value' => '+6016-701 3295', 'href' => 'tel:+60167013295'],
+                    'email' => ['label' => 'Email Us', 'value' => 'antadv.rei@gmail.com', 'href' => 'mailto:antadv.rei@gmail.com'],
+                ],
                 'whatsApp' => [
                     'label' => 'WhatsApp Us',
                     'subLabel' => 'Click to chat',
@@ -169,6 +173,10 @@ $siteConfig = [
                     ['label' => 'Contact No', 'value' => '+6016-701 3295'],
                     ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
                 ],
+                'quickActions' => [
+                    'phone' => ['label' => 'Call Us', 'value' => '+6016-701 3295', 'href' => 'tel:+60167013295'],
+                    'email' => ['label' => 'Email Us', 'value' => 'antadv.rei@gmail.com', 'href' => 'mailto:antadv.rei@gmail.com'],
+                ],
                 'whatsApp' => [
                     'label' => 'WhatsApp Us',
                     'subLabel' => 'Click to chat',
@@ -190,6 +198,10 @@ $siteConfig = [
                 'contactBlocks' => [
                     ['label' => 'Contact No', 'value' => '+6016-701 3295'],
                     ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
+                ],
+                'quickActions' => [
+                    'phone' => ['label' => 'Call Us', 'value' => '+6016-701 3295', 'href' => 'tel:+60167013295'],
+                    'email' => ['label' => 'Email Us', 'value' => 'antadv.rei@gmail.com', 'href' => 'mailto:antadv.rei@gmail.com'],
                 ],
                 'whatsApp' => [
                     'label' => 'WhatsApp Us',
