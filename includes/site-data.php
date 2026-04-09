@@ -63,8 +63,10 @@ $siteConfig = [
         'tag' => 'About Us',
         'title' => 'Reliable signage support for property management teams.',
         'paragraphs' => [
-            'A&T Media Sdn. Bhd. provides signage, printing, and advertising solutions with a strong focus on quality presentation and long-term durability. Our team works closely with building owners, management offices, and developers to ensure each sign fits the property environment and communication needs.',
-            'From condominium directories and notice boards to safety and amenity signs, we create signage that looks professional, communicates clearly, and performs well in daily use.',
+            'A&T Media Sdn. Bhd. is a printing and advertising company that provides signage design and creation in the Kuala Lumpur (KL) area. Our headquarters is situated at Ulu Tiram, Johor, Malaysia.',
+            'We provide a variety of in-house support in production, design, marketing, on-site installation, and evaluation.',
+            'Each product is produced by our experienced production team and quality checked by our senior production manager, who has 20 years of experience.',
+            'Not only do we have a strong team, but we also have 10,000 square feet of production space and state-of-the-art equipment such as routers, lasers, UV printers, plotters, cutting beds, 3D lettering machines, and automatic welding machines.',
         ],
         'features' => [
             ['title' => 'Professional Finish', 'copy' => 'Clean layouts, consistent branding, and durable materials suited for managed properties.'],
