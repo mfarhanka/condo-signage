@@ -46,6 +46,18 @@ function renderSectionHeader(array $section, bool $darkText = false): void
 $brand = $siteConfig['brand'];
 $meta = $siteConfig['meta'];
 $currentYear = date('Y');
+$activeBranch = null;
+
+foreach ($siteConfig['contact']['branches'] as $branch) {
+    if (!empty($branch['active'])) {
+        $activeBranch = $branch;
+        break;
+    }
+}
+
+if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
+    $activeBranch = $siteConfig['contact']['branches'][0];
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -246,30 +258,32 @@ $currentYear = date('Y');
                         <h2 class="section-title"><?= escape($siteConfig['contact']['title']); ?></h2>
                         <p class="section-copy"><?= escape($siteConfig['contact']['copy']); ?></p>
                         <div class="branch-tabs" role="tablist" aria-label="Contact branches">
-                            <?php foreach ($siteConfig['contact']['branchTabs'] as $tab): ?>
-                                <button type="button" class="branch-tab <?= $tab['active'] ? 'is-active' : ''; ?>" aria-pressed="<?= $tab['active'] ? 'true' : 'false'; ?>"><?= escape($tab['label']); ?></button>
+                            <?php foreach ($siteConfig['contact']['branches'] as $branch): ?>
+                                <button type="button" class="branch-tab <?= $branch['active'] ? 'is-active' : ''; ?>" data-branch-tab="<?= escape($branch['id']); ?>" aria-pressed="<?= $branch['active'] ? 'true' : 'false'; ?>"><?= escape($branch['label']); ?></button>
                             <?php endforeach; ?>
                         </div>
-                        <div class="contact-office-card">
-                            <h3><?= escape($siteConfig['contact']['office']['name']); ?></h3>
-                            <p class="contact-registration"><?= escape($siteConfig['contact']['office']['registration']); ?></p>
-                            <?php foreach ($siteConfig['contact']['office']['addressLines'] as $line): ?>
-                                <p class="contact-address-line"><?= escape($line); ?></p>
-                            <?php endforeach; ?>
+                        <div class="contact-office-card" data-contact-branch-panel>
+                            <h3 data-contact-office-name><?= escape($activeBranch['office']['name']); ?></h3>
+                            <p class="contact-registration" data-contact-office-registration><?= escape($activeBranch['office']['registration']); ?></p>
+                            <div data-contact-office-address>
+                                <?php foreach ($activeBranch['office']['addressLines'] as $line): ?>
+                                    <p class="contact-address-line"><?= escape($line); ?></p>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
-                        <div class="contact-list">
-                            <?php foreach ($siteConfig['contact']['contactBlocks'] as $detail): ?>
-                                <div>
+                        <div class="contact-list" data-contact-blocks>
+                            <?php foreach ($activeBranch['contactBlocks'] as $detail): ?>
+                                <div class="contact-list-item">
                                     <strong><?= escape($detail['label']); ?></strong>
                                     <span><?= escape($detail['value']); ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </div>
-                        <a class="whatsapp-card" href="<?= escape($siteConfig['contact']['whatsApp']['href']); ?>" target="_blank" rel="noreferrer">
+                        <a class="whatsapp-card" data-contact-whatsapp href="<?= escape($activeBranch['whatsApp']['href']); ?>" target="_blank" rel="noreferrer">
                             <span class="whatsapp-icon">W</span>
                             <span>
-                                <strong><?= escape($siteConfig['contact']['whatsApp']['label']); ?></strong>
-                                <small><?= escape($siteConfig['contact']['whatsApp']['subLabel']); ?></small>
+                                <strong data-contact-whatsapp-label><?= escape($activeBranch['whatsApp']['label']); ?></strong>
+                                <small data-contact-whatsapp-sublabel><?= escape($activeBranch['whatsApp']['subLabel']); ?></small>
                             </span>
                         </a>
                     </div>
@@ -308,6 +322,9 @@ $currentYear = date('Y');
         </div>
     </footer>
 
+    <script id="contact-branch-data" type="application/json"><?= json_encode($siteConfig['contact']['branches'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

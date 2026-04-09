@@ -130,27 +130,73 @@ $siteConfig = [
         'tag' => 'Contact Us',
         'title' => 'Reach Our Team',
         'copy' => 'Get in touch with our headquarters team for enquiries, quotation requests, and project discussions.',
-        'branchTabs' => [
-            ['label' => 'Branch', 'active' => false],
-            ['label' => 'HQ', 'active' => true],
-            ['label' => 'Branch SG', 'active' => false],
-        ],
-        'office' => [
-            'name' => 'A&T Media Sdn. Bhd.',
-            'registration' => '202501057902 (1659308-W)',
-            'addressLines' => [
-                '16, Jalan Nilam 1/6, Taman Teknologi Tinggi Subang,',
-                '47500 Subang Jaya, Selangor, Malaysia.',
+        'branches' => [
+            [
+                'id' => 'branch',
+                'label' => 'Branch',
+                'active' => false,
+                'office' => [
+                    'name' => 'A&T Media Branch Office',
+                    'registration' => 'Malaysia branch enquiries are coordinated through our central team.',
+                    'addressLines' => [
+                        'Branch visits are available by appointment for project coordination,',
+                        'site review planning, and installation support.',
+                    ],
+                ],
+                'contactBlocks' => [
+                    ['label' => 'Contact No', 'value' => '+6016-701 3295'],
+                    ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
+                ],
+                'whatsApp' => [
+                    'label' => 'WhatsApp Us',
+                    'subLabel' => 'Click to chat',
+                    'href' => 'https://wa.me/60167013295',
+                ],
             ],
-        ],
-        'contactBlocks' => [
-            ['label' => 'Contact No', 'value' => '+6016-701 3295'],
-            ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
-        ],
-        'whatsApp' => [
-            'label' => 'WhatsApp Us',
-            'subLabel' => 'Click to chat',
-            'href' => 'https://wa.me/60167013295',
+            [
+                'id' => 'hq',
+                'label' => 'HQ',
+                'active' => true,
+                'office' => [
+                    'name' => 'A&T Media Sdn. Bhd.',
+                    'registration' => '202501057902 (1659308-W)',
+                    'addressLines' => [
+                        '16, Jalan Nilam 1/6, Taman Teknologi Tinggi Subang,',
+                        '47500 Subang Jaya, Selangor, Malaysia.',
+                    ],
+                ],
+                'contactBlocks' => [
+                    ['label' => 'Contact No', 'value' => '+6016-701 3295'],
+                    ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
+                ],
+                'whatsApp' => [
+                    'label' => 'WhatsApp Us',
+                    'subLabel' => 'Click to chat',
+                    'href' => 'https://wa.me/60167013295',
+                ],
+            ],
+            [
+                'id' => 'branch-sg',
+                'label' => 'Branch SG',
+                'active' => false,
+                'office' => [
+                    'name' => 'A&T Media Singapore Branch',
+                    'registration' => 'Singapore branch enquiries can be routed through our regional team.',
+                    'addressLines' => [
+                        'Please contact us to arrange Singapore project discussions,',
+                        'quotation review, and cross-border signage coordination.',
+                    ],
+                ],
+                'contactBlocks' => [
+                    ['label' => 'Contact No', 'value' => '+6016-701 3295'],
+                    ['label' => 'Email Address', 'value' => 'antadv.rei@gmail.com'],
+                ],
+                'whatsApp' => [
+                    'label' => 'WhatsApp Us',
+                    'subLabel' => 'Click to chat',
+                    'href' => 'https://wa.me/60167013295',
+                ],
+            ],
         ],
         'formFields' => [
             ['id' => 'name', 'label' => 'Name*', 'type' => 'text', 'placeholder' => 'Enter name here', 'columnClass' => 'col-12'],
