@@ -307,6 +307,28 @@ p {
     border-radius: 1.25rem;
 }
 
+.about-media {
+    position: relative;
+    padding: 1.25rem;
+    border-radius: 1.75rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 246, 248, 0.92));
+    box-shadow: 0 18px 45px rgba(18, 18, 18, 0.08);
+}
+
+.about-photo {
+    display: block;
+    width: 100%;
+    border-radius: 1.2rem;
+    object-fit: cover;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-media figcaption {
+    margin-top: 1rem;
+    color: var(--brand-grey);
+    font-size: 1rem;
+}
+
 .feature-box {
     background: linear-gradient(180deg, #ffffff, #f3f4f6);
     border: 1px solid rgba(0, 0, 0, 0.07);
@@ -498,5 +520,9 @@ p {
     .product-card,
     .process-card {
         padding: 1.25rem;
+    }
+
+    .about-media {
+        padding: 0.9rem;
     }
 }

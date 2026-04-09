@@ -167,11 +167,10 @@ $currentYear = date('Y');
                         <?php endforeach; ?>
                     </div>
                     <div class="col-lg-6">
-                        <div class="about-card">
-                            <div class="row g-4">
-                                <?php renderCardGrid($siteConfig['about']['features'], 'col-sm-6', 'feature-box'); ?>
-                            </div>
-                        </div>
+                        <figure class="about-media mb-0">
+                            <img class="about-photo" src="<?= escape($siteConfig['about']['image']['src']); ?>" alt="<?= escape($siteConfig['about']['image']['alt']); ?>">
+                            <figcaption><?= escape($siteConfig['about']['image']['caption']); ?></figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
