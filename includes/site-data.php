@@ -266,13 +266,15 @@ $siteConfig = [
         ],
         'projects' => [
             'tag' => 'Projects',
-            'title' => 'Selected signage applications for managed properties.',
-            'copy' => 'Representative project categories show how Condo Signage supports different property areas with coordinated visual systems.',
-            'items' => [
-                ['title' => 'Lobby Directories', 'copy' => 'Directory systems and identity signage for entrances, reception spaces, and shared arrival zones.'],
-                ['title' => 'Car Park Navigation', 'copy' => 'Level identification, directional signs, and reserved bay systems for easier vehicle movement.'],
-                ['title' => 'Amenity Signage Sets', 'copy' => 'Consistent signage packages for pools, gyms, multipurpose halls, and other shared facilities.'],
-            ],
+            'title' => 'Companies that have used our services.',
+            'copy' => 'Temporary client logo placeholders are shown below in a repeated 20-logo grid until the final brand files are provided.',
+            'logos' => array_map(
+                static fn(int $index): array => [
+                    'src' => 'logo.jpg',
+                    'alt' => 'Client logo placeholder ' . $index,
+                ],
+                range(1, 20)
+            ),
         ],
     ],
     'catalogue' => [

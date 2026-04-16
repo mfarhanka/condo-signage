@@ -33,6 +33,19 @@ function renderCardGrid(array $items, string $columnClass, string $cardClass): v
     }
 }
 
+function renderLogoGrid(array $logos): void
+{
+    echo '<div class="logo-grid" aria-label="Client logos">';
+
+    foreach ($logos as $logo) {
+        echo '<div class="logo-grid-item">';
+        echo '<img class="logo-grid-image" src="' . escape($logo['src']) . '" alt="' . escape($logo['alt']) . '" loading="lazy">';
+        echo '</div>';
+    }
+
+    echo '</div>';
+}
+
 function renderSectionHeader(array $section, bool $darkText = false): void
 {
     $tagClass = $darkText ? 'section-tag text-dark' : 'section-tag';
@@ -218,9 +231,7 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
         <section id="projects" class="section-space bg-light-subtle">
             <div class="container">
                 <?php renderSectionHeader($siteConfig['sections']['projects'], true); ?>
-                <div class="row g-4">
-                    <?php renderCardGrid($siteConfig['sections']['projects']['items'], 'col-md-6 col-xl-4', 'product-card'); ?>
-                </div>
+                <?php renderLogoGrid($siteConfig['sections']['projects']['logos']); ?>
             </div>
         </section>
 
