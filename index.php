@@ -19,10 +19,16 @@ function renderCardGrid(array $items, string $columnClass, string $cardClass): v
 {
     foreach ($items as $item) {
         echo '<div class="' . escape($columnClass) . '">';
+        if (!empty($item['href'])) {
+            echo '<a class="card-link" href="' . escape($item['href']) . '">';
+        }
         echo '<article class="' . escape($cardClass) . '">';
         echo '<h3>' . escape($item['title']) . '</h3>';
         echo '<p>' . escape($item['copy']) . '</p>';
         echo '</article>';
+        if (!empty($item['href'])) {
+            echo '</a>';
+        }
         echo '</div>';
     }
 }

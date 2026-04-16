@@ -259,6 +259,7 @@ $siteConfig = [
                 static fn(array $category): array => [
                     'title' => $category['title'],
                     'copy' => $category['copy'],
+                    'href' => 'catalogue.php#' . $category['id'],
                 ],
                 $catalogueCategories
             ),
