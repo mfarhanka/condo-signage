@@ -6,6 +6,16 @@ $catalogueCategories = [
         'title' => 'Wayfinding Signs',
         'copy' => 'Directional signs for lobbies, tower cores, lift zones, parking decks, and shared circulation routes.',
         'highlights' => ['Lift lobbies and floor directories', 'Directional arrows and landmark markers', 'Consistent branding across multiple blocks'],
+        'gallery' => [
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-01.jpg', 'alt' => 'Wayfinding sign sample 1'],
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-02.jpg', 'alt' => 'Wayfinding sign sample 2'],
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-03.jpg', 'alt' => 'Wayfinding sign sample 3'],
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-04.jpg', 'alt' => 'Wayfinding sign sample 4'],
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-05.jpg', 'alt' => 'Wayfinding sign sample 5'],
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-06.jpg', 'alt' => 'Wayfinding sign sample 6'],
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-07.jpg', 'alt' => 'Wayfinding sign sample 7'],
+            ['src' => 'assets/images/wayfinding-signs/wayfinding-sign-08.jpg', 'alt' => 'Wayfinding sign sample 8'],
+        ],
     ],
     [
         'id' => 'notice-boards',

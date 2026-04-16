@@ -109,6 +109,15 @@ $currentYear = date('Y');
                                         <li><?= escape($highlight); ?></li>
                                     <?php endforeach; ?>
                                 </ul>
+                                <?php if (!empty($category['gallery'])): ?>
+                                    <div class="catalogue-gallery" aria-label="<?= escape($category['title']); ?> examples">
+                                        <?php foreach ($category['gallery'] as $image): ?>
+                                            <a class="catalogue-gallery-item" href="<?= escape($image['src']); ?>" target="_blank" rel="noreferrer">
+                                                <img src="<?= escape($image['src']); ?>" alt="<?= escape($image['alt']); ?>" loading="lazy">
+                                            </a>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
                             </article>
                         <?php endforeach; ?>
                     </div>
