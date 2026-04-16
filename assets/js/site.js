@@ -223,7 +223,120 @@ const initCatalogueLightbox = () => {
     });
 };
 
+const initReviewsRotator = () => {
+    const reviewDataNode = document.getElementById("reviews-data");
+    const reviewSlots = Array.from(document.querySelectorAll("[data-review-slot]"));
+    const reviewsRotator = document.querySelector("[data-reviews-rotator]");
+
+    if (!reviewDataNode || reviewSlots.length === 0 || !reviewsRotator) {
+        return;
+    }
+
+    let reviews = [];
+
+    try {
+        reviews = JSON.parse(reviewDataNode.textContent || "[]");
+    } catch (error) {
+        return;
+    }
+
+    if (reviews.length <= reviewSlots.length) {
+        return;
+    }
+
+    let startIndex = 0;
+    let intervalId = null;
+
+    const buildStars = (rating) => {
+        let markup = '<div class="review-stars" aria-label="' + rating + ' out of 5 stars">';
+
+        for (let star = 0; star < 5; star += 1) {
+            const className = star < rating ? "review-star is-filled" : "review-star";
+            markup += '<span class="' + className + '">&#9733;</span>';
+        }
+
+        markup += "</div>";
+        return markup;
+    };
+
+    const renderVisibleReviews = () => {
+        reviewSlots.forEach((slot, slotIndex) => {
+            const review = reviews[(startIndex + slotIndex) % reviews.length];
+            const starsNode = slot.querySelector("[data-review-stars]");
+            const copyNode = slot.querySelector("[data-review-copy]");
+            const authorNode = slot.querySelector("[data-review-author]");
+            const metaNode = slot.querySelector("[data-review-meta]");
+
+            if (starsNode) {
+                starsNode.innerHTML = buildStars(review.rating);
+            }
+
+            if (copyNode) {
+                copyNode.textContent = review.copy;
+            }
+
+            if (authorNode) {
+                authorNode.textContent = review.author;
+            }
+
+            if (metaNode) {
+                metaNode.textContent = review.meta;
+            }
+        });
+    };
+
+    const advanceReviews = () => {
+        reviewSlots.forEach((slot) => {
+            slot.classList.add("is-swapping");
+        });
+
+        window.setTimeout(() => {
+            startIndex = (startIndex + 1) % reviews.length;
+            renderVisibleReviews();
+
+            requestAnimationFrame(() => {
+                reviewSlots.forEach((slot) => {
+                    slot.classList.remove("is-swapping");
+                });
+            });
+        }, 180);
+    };
+
+    const startAutoRotate = () => {
+        if (intervalId !== null) {
+            return;
+        }
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            return;
+        }
+
+        intervalId = window.setInterval(advanceReviews, 3200);
+    };
+
+    const stopAutoRotate = () => {
+        if (intervalId !== null) {
+            window.clearInterval(intervalId);
+            intervalId = null;
+        }
+    };
+
+    reviewsRotator.addEventListener("mouseenter", stopAutoRotate);
+    reviewsRotator.addEventListener("mouseleave", startAutoRotate);
+    reviewsRotator.addEventListener("focusin", stopAutoRotate);
+    reviewsRotator.addEventListener("focusout", (event) => {
+        if (event.relatedTarget && reviewsRotator.contains(event.relatedTarget)) {
+            return;
+        }
+
+        startAutoRotate();
+    });
+
+    startAutoRotate();
+};
+
 document.addEventListener("DOMContentLoaded", () => {
     initContactTabs();
     initCatalogueLightbox();
+    initReviewsRotator();
 });

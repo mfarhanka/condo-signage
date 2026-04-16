@@ -276,6 +276,62 @@ $siteConfig = [
                 range(1, 20)
             ),
         ],
+        'reviews' => [
+            'tag' => 'Google Reviews',
+            'title' => 'Public feedback from our Google profile.',
+            'copy' => 'This section is ready for your approved Google review excerpts and can be updated with your exact rating and live review link.',
+            'summary' => [
+                'rating' => '5.0',
+                'countLabel' => '28 Google reviews',
+                'ctaLabel' => 'View On Google',
+                'ctaHref' => 'https://www.google.com/search?q=A%26T+Media+Sdn.+Bhd.+google+reviews',
+            ],
+            'items' => array_map(
+                static function (int $index): array {
+                    $clientTypes = [
+                        'Property management client',
+                        'Commercial signage client',
+                        'Building operations client',
+                        'Residential development client',
+                        'Facilities team client',
+                        'Corporate branding client',
+                        'Maintenance coordination client',
+                    ];
+
+                    $focuses = [
+                        'responsive communication',
+                        'clean installation work',
+                        'durable final finishing',
+                        'smooth project coordination',
+                        'clear design support',
+                        'fast production turnaround',
+                        'professional site handling',
+                    ];
+
+                    $outcomes = [
+                        'The team delivered clear updates throughout the process and the final signage looked consistent across the property.',
+                        'Installation was neat, on time, and easy for our operations team to coordinate around daily building activity.',
+                        'The workmanship and material finish gave the project a polished result that matched the approval visuals closely.',
+                        'Communication stayed straightforward from quotation to handover, which made the whole signage package easier to manage.',
+                        'They helped translate practical site requirements into a final signage solution that worked well for residents and visitors.',
+                        'The overall service experience felt reliable and structured, especially during planning, fabrication, and on-site execution.',
+                        'Our team appreciated how quickly revisions and technical questions were handled before installation started.',
+                    ];
+
+                    $clientType = $clientTypes[($index - 1) % count($clientTypes)];
+                    $focus = $focuses[($index - 1) % count($focuses)];
+                    $outcome = $outcomes[($index - 1) % count($outcomes)];
+
+                    return [
+                        'author' => 'Google Review Placeholder ' . str_pad((string) $index, 2, '0', STR_PAD_LEFT),
+                        'meta' => $clientType,
+                        'rating' => 5,
+                        'copy' => 'Review placeholder ' . $index . ' highlights ' . $focus . '. ' . $outcome,
+                    ];
+                },
+                range(1, 28)
+            ),
+        ],
     ],
     'catalogue' => [
         'tag' => 'Product Catalogue',

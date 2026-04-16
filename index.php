@@ -46,6 +46,18 @@ function renderLogoGrid(array $logos): void
     echo '</div>';
 }
 
+function renderReviewStars(int $rating): void
+{
+    echo '<div class="review-stars" aria-label="' . escape((string) $rating) . ' out of 5 stars">';
+
+    for ($star = 0; $star < 5; $star++) {
+        $className = $star < $rating ? 'review-star is-filled' : 'review-star';
+        echo '<span class="' . $className . '">&#9733;</span>';
+    }
+
+    echo '</div>';
+}
+
 function renderSectionHeader(array $section, bool $darkText = false): void
 {
     $tagClass = $darkText ? 'section-tag text-dark' : 'section-tag';
@@ -235,6 +247,42 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
             </div>
         </section>
 
+        <section id="reviews" class="section-space reviews-section">
+            <div class="container">
+                <?php renderSectionHeader($siteConfig['sections']['reviews']); ?>
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-lg-4">
+                        <aside class="reviews-summary-card">
+                            <span class="reviews-kicker">Google</span>
+                            <strong class="reviews-rating"><?= escape($siteConfig['sections']['reviews']['summary']['rating']); ?></strong>
+                            <?php renderReviewStars(5); ?>
+                            <p class="reviews-count mb-4"><?= escape($siteConfig['sections']['reviews']['summary']['countLabel']); ?></p>
+                            <a class="btn btn-brand" href="<?= escape($siteConfig['sections']['reviews']['summary']['ctaHref']); ?>" target="_blank" rel="noreferrer"><?= escape($siteConfig['sections']['reviews']['summary']['ctaLabel']); ?></a>
+                        </aside>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row g-4" data-reviews-rotator>
+                            <?php foreach (array_slice($siteConfig['sections']['reviews']['items'], 0, 3) as $slotIndex => $review): ?>
+                                <div class="col-md-6 col-xl-4">
+                                    <article class="review-card" data-review-slot="<?= escape((string) $slotIndex); ?>">
+                                        <div class="review-card-top">
+                                            <div data-review-stars><?php renderReviewStars((int) $review['rating']); ?></div>
+                                            <span class="review-source">Google Review</span>
+                                        </div>
+                                        <p class="review-copy" data-review-copy><?= escape($review['copy']); ?></p>
+                                        <footer class="review-card-footer">
+                                            <strong data-review-author><?= escape($review['author']); ?></strong>
+                                            <span data-review-meta><?= escape($review['meta']); ?></span>
+                                        </footer>
+                                    </article>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="services" class="section-space process-section bg-dark text-white">
             <div class="container">
                 <div class="row g-4 align-items-center">
@@ -368,6 +416,7 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
     </footer>
 
     <script id="contact-branch-data" type="application/json"><?= json_encode($siteConfig['contact']['branches'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?></script>
+    <script id="reviews-data" type="application/json"><?= json_encode($siteConfig['sections']['reviews']['items'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="assets/js/site.js"></script>
