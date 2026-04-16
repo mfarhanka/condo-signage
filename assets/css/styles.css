@@ -376,6 +376,24 @@ p {
     border-color: rgba(199, 24, 42, 0.35);
 }
 
+.products-section .product-card {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+        linear-gradient(145deg, #c7182a 0%, #8d0f1d 100%);
+    border-color: rgba(141, 15, 29, 0.42);
+    box-shadow: 0 18px 36px rgba(118, 12, 24, 0.2);
+}
+
+.products-section .product-card h3,
+.products-section .product-card p {
+    color: #fff;
+}
+
+.products-section .product-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 22px 44px rgba(118, 12, 24, 0.28);
+}
+
 .process-section {
     background:
         radial-gradient(circle at top left, rgba(199, 24, 42, 0.26), transparent 24%),
