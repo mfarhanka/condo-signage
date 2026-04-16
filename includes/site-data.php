@@ -279,58 +279,183 @@ $siteConfig = [
         'reviews' => [
             'tag' => 'Google Reviews',
             'title' => 'Public feedback from our Google profile.',
-            'copy' => 'This section is ready for your approved Google review excerpts and can be updated with your exact rating and live review link.',
+            'copy' => 'A selection of verified 5-star Google reviews from clients who engaged A&T for signboard design, fabrication, and installation.',
             'summary' => [
                 'rating' => '5.0',
                 'countLabel' => '28 Google reviews',
                 'ctaLabel' => 'View On Google',
-                'ctaHref' => 'https://www.google.com/search?q=A%26T+Media+Sdn.+Bhd.+google+reviews',
+                'ctaHref' => 'https://maps.app.goo.gl/WsecQHUZpM75S1mu8',
             ],
-            'items' => array_map(
-                static function (int $index): array {
-                    $clientTypes = [
-                        'Property management client',
-                        'Commercial signage client',
-                        'Building operations client',
-                        'Residential development client',
-                        'Facilities team client',
-                        'Corporate branding client',
-                        'Maintenance coordination client',
-                    ];
-
-                    $focuses = [
-                        'responsive communication',
-                        'clean installation work',
-                        'durable final finishing',
-                        'smooth project coordination',
-                        'clear design support',
-                        'fast production turnaround',
-                        'professional site handling',
-                    ];
-
-                    $outcomes = [
-                        'The team delivered clear updates throughout the process and the final signage looked consistent across the property.',
-                        'Installation was neat, on time, and easy for our operations team to coordinate around daily building activity.',
-                        'The workmanship and material finish gave the project a polished result that matched the approval visuals closely.',
-                        'Communication stayed straightforward from quotation to handover, which made the whole signage package easier to manage.',
-                        'They helped translate practical site requirements into a final signage solution that worked well for residents and visitors.',
-                        'The overall service experience felt reliable and structured, especially during planning, fabrication, and on-site execution.',
-                        'Our team appreciated how quickly revisions and technical questions were handled before installation started.',
-                    ];
-
-                    $clientType = $clientTypes[($index - 1) % count($clientTypes)];
-                    $focus = $focuses[($index - 1) % count($focuses)];
-                    $outcome = $outcomes[($index - 1) % count($outcomes)];
-
-                    return [
-                        'author' => 'Google Review Placeholder ' . str_pad((string) $index, 2, '0', STR_PAD_LEFT),
-                        'meta' => $clientType,
-                        'rating' => 5,
-                        'copy' => 'Review placeholder ' . $index . ' highlights ' . $focus . '. ' . $outcome,
-                    ];
-                },
-                range(1, 28)
-            ),
+            'items' => [
+                [
+                    'author' => 'Admin',
+                    'meta' => '3 reviews · 4 photos · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'Very impressed with A&T Signboard! The designer is professional and helpful, giving great design options that fit customer needs. Really satisfied with the final artwork!!',
+                ],
+                [
+                    'author' => 'Crudites Events',
+                    'meta' => '1 review · 2 months ago',
+                    'rating' => 5,
+                    'copy' => 'Excellent service team, managed to provide advice and suggestions on signboard design and installation. Very much recommended!',
+                ],
+                [
+                    'author' => 'Ghost Me',
+                    'meta' => '5 reviews · 4 photos · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'A&T Signboard team is awesome! Easy to talk and their artwork is so nice. Really satisfied with the result!',
+                ],
+                [
+                    'author' => 'Li Anne',
+                    'meta' => '12 reviews · 4 photos · 2 months ago',
+                    'rating' => 5,
+                    'copy' => 'Very good service and excellent quality signboard. Highly recommended!!',
+                ],
+                [
+                    'author' => 'Ivan "Iv.A" Ang',
+                    'meta' => '5 reviews · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'Friendly and professional team, recommended for advertising needs and wants. Good job and keep it up!',
+                ],
+                [
+                    'author' => 'Ehsan Property',
+                    'meta' => '1 review · 1 photo · a year ago',
+                    'rating' => 5,
+                    'copy' => 'We had a great experience dealing with Mr. Ray Tan and his team. We ordered a signboard, and they provided excellent service. The font and overall design were neat and beautiful. This is the second time we have ordered from this company, and I highly recommend them for their outstanding customer care and top-notch service!',
+                ],
+                [
+                    'author' => 'Jessyca Yong',
+                    'meta' => 'Local Guide · 41 reviews · 6 photos · a year ago',
+                    'rating' => 5,
+                    'copy' => 'Highly recommend! very responsive and reasonable pricing. Thanks Brandon for his good service. hope to collaborate more on highway projects.',
+                ],
+                [
+                    'author' => 'SoftiexDinox',
+                    'meta' => 'Local Guide · 17 reviews · 8 photos · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'A&T Advertising PTE LTD. Very nice and professional service!',
+                ],
+                [
+                    'author' => 'Owen Lee',
+                    'meta' => 'Local Guide · 8 reviews · 6 photos · 7 months ago',
+                    'rating' => 5,
+                    'copy' => 'Superb service and quality signage from A&T Advertising.',
+                ],
+                [
+                    'author' => 'Y S Chang',
+                    'meta' => '4 reviews · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'Excellent quality product with service.',
+                ],
+                [
+                    'author' => 'Wan Brandon',
+                    'meta' => '4 reviews · 1 photo · a year ago',
+                    'rating' => 5,
+                    'copy' => 'Professional signboard maker in Klang Valley. Reasonable price, and quality product and service. Must choose A&T.',
+                ],
+                [
+                    'author' => 'Naqiah',
+                    'meta' => '3 reviews · 1 photo · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'Good service and quality in signboard.',
+                ],
+                [
+                    'author' => 'My Love',
+                    'meta' => '1 review · 2 months ago',
+                    'rating' => 5,
+                    'copy' => 'Good service.',
+                ],
+                [
+                    'author' => 'zy tan',
+                    'meta' => '4 reviews · 1 photo · 8 months ago',
+                    'rating' => 5,
+                    'copy' => 'SY Printing good service.',
+                ],
+                [
+                    'author' => 'Vennibell',
+                    'meta' => '1 review · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'Very good!',
+                ],
+                [
+                    'author' => 'R4Rei Tan (R4Rei)',
+                    'meta' => '11 reviews · 2 years ago',
+                    'rating' => 5,
+                    'copy' => 'Good services.',
+                ],
+                [
+                    'author' => 'Hashim Abdullah',
+                    'meta' => '7 reviews · 8 photos · a year ago',
+                    'rating' => 5,
+                    'copy' => 'It is a pleasure to deal with A & T. All questions and suggestions received good cooperation and response.',
+                ],
+                [
+                    'author' => 'shimin Tan',
+                    'meta' => '4 reviews · 2 photos · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'The new sign is really nice! The workmanship is very fine, and when the light is on it looks very textured.',
+                ],
+                [
+                    'author' => 'Fariq hakimi',
+                    'meta' => '2 reviews · 3 photos · 5 months ago',
+                    'rating' => 5,
+                    'copy' => 'Very good work.',
+                ],
+                [
+                    'author' => 'Nur Milah',
+                    'meta' => '5 months ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'Babuwilna Wilnasani',
+                    'meta' => '5 months ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'Syafawani Mukayat',
+                    'meta' => '1 review · 2 photos · 5 months ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'Eugene Loo',
+                    'meta' => '2 reviews · 2 photos · 5 months ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'Mohd Faizal Faizaliyananas',
+                    'meta' => '1 review · 5 months ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'Shinee Pong',
+                    'meta' => 'Local Guide · 17 reviews · 226 photos · a year ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'JIA SHENG CHIN',
+                    'meta' => '4 reviews · 2 photos · a year ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'Chloe Tan',
+                    'meta' => '1 review · 2 years ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+                [
+                    'author' => 'Rei Tan',
+                    'meta' => '2 years ago',
+                    'rating' => 5,
+                    'copy' => '5-star Google review.',
+                ],
+            ],
         ],
     ],
     'catalogue' => [
