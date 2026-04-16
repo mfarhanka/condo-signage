@@ -75,6 +75,18 @@ $catalogueCategories = [
         'title' => 'Condominium Outdoor Signage',
         'copy' => 'Exterior signage solutions such as frontlit, backlit, and lightbox systems engineered for visibility and weather exposure.',
         'highlights' => ['Main entrance branding', 'Frontlit, backlit, and lightbox fabrication', 'Built for outdoor visibility and maintenance access'],
+        'gallery' => [
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-01.jpg', 'alt' => 'Condominium outdoor signage sample 1'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-02.jpg', 'alt' => 'Condominium outdoor signage sample 2'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-03.jpg', 'alt' => 'Condominium outdoor signage sample 3'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-04.jpg', 'alt' => 'Condominium outdoor signage sample 4'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-05.jpg', 'alt' => 'Condominium outdoor signage sample 5'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-06.jpg', 'alt' => 'Condominium outdoor signage sample 6'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-07.jpg', 'alt' => 'Condominium outdoor signage sample 7'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-08.jpg', 'alt' => 'Condominium outdoor signage sample 8'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-09.jpg', 'alt' => 'Condominium outdoor signage sample 9'],
+            ['src' => 'assets/images/catalogue/condominium-outdoor-signage/condominium-outdoor-signage-10.jpg', 'alt' => 'Condominium outdoor signage sample 10'],
+        ],
     ],
     [
         'id' => 'custom-number-signage',
