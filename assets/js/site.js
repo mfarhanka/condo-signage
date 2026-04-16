@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+const initContactTabs = () => {
     const branchDataNode = document.getElementById("contact-branch-data");
     const branchButtons = document.querySelectorAll("[data-branch-tab]");
 
@@ -117,4 +117,113 @@ document.addEventListener("DOMContentLoaded", () => {
             activateBranch(button.dataset.branchTab || "");
         });
     });
+};
+
+const initCatalogueLightbox = () => {
+    const galleryItems = Array.from(document.querySelectorAll("[data-gallery-item]"));
+    const lightbox = document.querySelector("[data-gallery-lightbox]");
+
+    if (galleryItems.length === 0 || !lightbox) {
+        return;
+    }
+
+    const lightboxImage = lightbox.querySelector("[data-gallery-image]");
+    const lightboxCaption = lightbox.querySelector("[data-gallery-caption]");
+    const lightboxCounter = lightbox.querySelector("[data-gallery-counter]");
+    const closeButton = lightbox.querySelector("[data-gallery-close]");
+    const prevButton = lightbox.querySelector("[data-gallery-prev]");
+    const nextButton = lightbox.querySelector("[data-gallery-next]");
+    const backdrop = lightbox.querySelector("[data-gallery-backdrop]");
+    const pageBody = document.body;
+
+    const items = galleryItems.map((item) => {
+        const image = item.querySelector("img");
+
+        return {
+            source: item.getAttribute("href") || "",
+            alt: image?.getAttribute("alt") || "",
+            category: item.dataset.galleryTitle || "Gallery",
+        };
+    });
+
+    let activeIndex = 0;
+
+    const renderImage = () => {
+        const activeItem = items[activeIndex];
+
+        if (!activeItem || !lightboxImage || !lightboxCaption || !lightboxCounter) {
+            return;
+        }
+
+        lightboxImage.src = activeItem.source;
+        lightboxImage.alt = activeItem.alt;
+        lightboxCaption.textContent = `${activeItem.category} - ${activeItem.alt}`;
+        lightboxCounter.textContent = `${activeIndex + 1} / ${items.length}`;
+    };
+
+    const openLightbox = (index) => {
+        activeIndex = index;
+        renderImage();
+        lightbox.hidden = false;
+        pageBody.classList.add("lightbox-open");
+    };
+
+    const closeLightbox = () => {
+        lightbox.hidden = true;
+        pageBody.classList.remove("lightbox-open");
+
+        if (lightboxImage) {
+            lightboxImage.src = "";
+        }
+    };
+
+    const showNext = () => {
+        activeIndex = (activeIndex + 1) % items.length;
+        renderImage();
+    };
+
+    const showPrevious = () => {
+        activeIndex = (activeIndex - 1 + items.length) % items.length;
+        renderImage();
+    };
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener("click", (event) => {
+            event.preventDefault();
+            openLightbox(index);
+        });
+    });
+
+    closeButton?.addEventListener("click", closeLightbox);
+    nextButton?.addEventListener("click", showNext);
+    prevButton?.addEventListener("click", showPrevious);
+
+    lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox || event.target === backdrop) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (lightbox.hidden) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+        if (event.key === "ArrowRight") {
+            showNext();
+        }
+
+        if (event.key === "ArrowLeft") {
+            showPrevious();
+        }
+    });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    initContactTabs();
+    initCatalogueLightbox();
 });

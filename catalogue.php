@@ -112,7 +112,7 @@ $currentYear = date('Y');
                                 <?php if (!empty($category['gallery'])): ?>
                                     <div class="catalogue-gallery" aria-label="<?= escape($category['title']); ?> examples">
                                         <?php foreach ($category['gallery'] as $image): ?>
-                                            <a class="catalogue-gallery-item" href="<?= escape($image['src']); ?>" target="_blank" rel="noreferrer">
+                                            <a class="catalogue-gallery-item" href="<?= escape($image['src']); ?>" data-gallery-item data-gallery-group="<?= escape($category['id']); ?>" data-gallery-title="<?= escape($category['title']); ?>">
                                                 <img src="<?= escape($image['src']); ?>" alt="<?= escape($image['alt']); ?>" loading="lazy">
                                             </a>
                                         <?php endforeach; ?>
@@ -140,6 +140,20 @@ $currentYear = date('Y');
         </div>
     </footer>
 
+    <div class="catalogue-lightbox" data-gallery-lightbox hidden>
+        <button class="catalogue-lightbox-close" type="button" aria-label="Close image viewer" data-gallery-close>&times;</button>
+        <button class="catalogue-lightbox-nav catalogue-lightbox-prev" type="button" aria-label="Previous image" data-gallery-prev>&lsaquo;</button>
+        <div class="catalogue-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Catalogue image viewer" data-gallery-backdrop>
+            <img class="catalogue-lightbox-image" src="" alt="" data-gallery-image>
+            <div class="catalogue-lightbox-meta">
+                <strong data-gallery-caption></strong>
+                <span data-gallery-counter></span>
+            </div>
+        </div>
+        <button class="catalogue-lightbox-nav catalogue-lightbox-next" type="button" aria-label="Next image" data-gallery-next>&rsaquo;</button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>
