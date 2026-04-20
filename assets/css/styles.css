@@ -1045,6 +1045,13 @@ body.lightbox-open {
     color: rgba(255, 255, 255, 0.7);
 }
 
+.site-footer p,
+.site-footer small,
+.site-footer span,
+.site-footer a {
+    color: rgba(255, 255, 255, 0.82);
+}
+
 @media (max-width: 991.98px) {
     .section-space {
         padding: 4.5rem 0;
