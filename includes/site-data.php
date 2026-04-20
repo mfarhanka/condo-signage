@@ -1,5 +1,13 @@
 <?php
 
+require_once __DIR__ . '/sponsor-logos.php';
+
+$managedSponsorLogos = loadSponsorLogos(false);
+$projectLogos = $managedSponsorLogos !== [] ? $managedSponsorLogos : defaultSponsorLogos();
+$projectLogoCopy = $managedSponsorLogos !== []
+    ? 'Sponsor logos uploaded through the CMS are shown below in the sliding carousel.'
+    : 'Upload sponsor logos through the CMS to replace these temporary placeholders in the sliding carousel.';
+
 $catalogueCategories = [
     [
         'id' => 'wayfinding-signs',
@@ -267,14 +275,8 @@ $siteConfig = [
         'projects' => [
             'tag' => 'Projects',
             'title' => 'Companies that have used our services.',
-            'copy' => 'A focused selection of client logo placeholders is shown below in a sliding carousel until the final brand files are provided.',
-            'logos' => array_map(
-                static fn(int $index): array => [
-                    'src' => 'logo.jpg',
-                    'alt' => 'Client logo placeholder ' . $index,
-                ],
-                range(1, 10)
-            ),
+            'copy' => $projectLogoCopy,
+            'logos' => $projectLogos,
         ],
         'reviews' => [
             'tag' => 'Google Reviews',

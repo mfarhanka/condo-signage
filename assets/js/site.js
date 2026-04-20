@@ -307,10 +307,11 @@ const initLogoCarousel = () => {
 
     const syncCarousel = () => {
         const visibleCount = getVisibleCount();
+        const displayCount = Math.max(1, Math.min(baseItems.length, visibleCount));
 
         stopAutoSlide();
         clearClones();
-        carousel.style.setProperty("--logo-visible-count", String(visibleCount));
+        carousel.style.setProperty("--logo-visible-count", String(displayCount));
         currentIndex = 0;
 
         if (baseItems.length <= visibleCount) {
