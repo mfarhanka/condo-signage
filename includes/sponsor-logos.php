@@ -241,6 +241,57 @@ function addSponsorLogo(string $alt, array $upload): array
     return $logo;
 }
 
+function updateSponsorLogo(string $id, string $alt): bool
+{
+    $logos = loadSponsorLogos(false);
+    $updated = false;
+    $trimmedAlt = trim($alt);
+
+    foreach ($logos as $index => $logo) {
+        if ($logo['id'] !== $id) {
+            continue;
+        }
+
+        $logos[$index]['alt'] = $trimmedAlt !== '' ? $trimmedAlt : 'Sponsor logo ' . ($index + 1);
+        $updated = true;
+        break;
+    }
+
+    if ($updated) {
+        saveSponsorLogos($logos);
+    }
+
+    return $updated;
+}
+
+function moveSponsorLogo(string $id, string $direction): bool
+{
+    $logos = loadSponsorLogos(false);
+    $currentIndex = null;
+
+    foreach ($logos as $index => $logo) {
+        if ($logo['id'] === $id) {
+            $currentIndex = $index;
+            break;
+        }
+    }
+
+    if ($currentIndex === null) {
+        return false;
+    }
+
+    $targetIndex = $direction === 'up' ? $currentIndex - 1 : $currentIndex + 1;
+
+    if ($targetIndex < 0 || $targetIndex >= count($logos)) {
+        return false;
+    }
+
+    [$logos[$currentIndex], $logos[$targetIndex]] = [$logos[$targetIndex], $logos[$currentIndex]];
+    saveSponsorLogos($logos);
+
+    return true;
+}
+
 function deleteSponsorLogo(string $id): bool
 {
     $logos = loadSponsorLogos(false);
