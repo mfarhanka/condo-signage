@@ -407,28 +407,69 @@ p {
     box-shadow: 0 22px 44px rgba(118, 12, 24, 0.28);
 }
 
-.logo-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 1.25rem;
+.logo-carousel {
+    --logo-gap: 1.5rem;
+    --logo-visible-count: 5;
+    position: relative;
 }
 
-.logo-grid-item {
+.logo-carousel::before,
+.logo-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4.5rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.logo-carousel::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(243, 244, 246, 0.96), rgba(243, 244, 246, 0));
+}
+
+.logo-carousel::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(243, 244, 246, 0.96), rgba(243, 244, 246, 0));
+}
+
+.logo-carousel-viewport {
+    overflow: hidden;
+}
+
+.logo-carousel-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (var(--logo-gap) * (var(--logo-visible-count) - 1))) / var(--logo-visible-count));
+    align-items: center;
+    gap: var(--logo-gap);
+    transition: transform 0.65s ease;
+    will-change: transform;
+}
+
+.logo-carousel-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 140px;
-    padding: 1.5rem;
-    border-radius: 1.25rem;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 247, 247, 0.92));
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 14px 30px rgba(17, 17, 17, 0.06);
+    min-height: 92px;
+    padding: 0.5rem 0.75rem;
 }
 
-.logo-grid-image {
-    max-width: 100%;
-    max-height: 72px;
+.logo-carousel-image {
+    width: 100%;
+    max-width: 170px;
+    max-height: 68px;
     object-fit: contain;
+}
+
+.logo-carousel.is-static::before,
+.logo-carousel.is-static::after {
+    display: none;
+}
+
+.logo-carousel.is-static .logo-carousel-viewport {
+    overflow: visible;
 }
 
 .reviews-section {
@@ -1057,8 +1098,8 @@ body.lightbox-open {
         padding: 4.5rem 0;
     }
 
-    .logo-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+    .logo-carousel {
+        --logo-gap: 1.2rem;
     }
 
     .hero-section h1,
@@ -1102,8 +1143,9 @@ body.lightbox-open {
 }
 
 @media (max-width: 767.98px) {
-    .logo-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .logo-carousel {
+        --logo-visible-count: 3;
+        --logo-gap: 1rem;
     }
 }
 
@@ -1117,18 +1159,23 @@ body.lightbox-open {
         align-items: flex-start;
     }
 
-    .logo-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
+    .logo-carousel {
+        --logo-visible-count: 2;
+        --logo-gap: 0.85rem;
     }
 
-    .logo-grid-item {
-        min-height: 110px;
-        padding: 1rem;
+    .logo-carousel::before,
+    .logo-carousel::after {
+        width: 2.75rem;
     }
 
-    .logo-grid-image {
-        max-height: 56px;
+    .logo-carousel-item {
+        min-height: 76px;
+        padding: 0.35rem 0.5rem;
+    }
+
+    .logo-carousel-image {
+        max-height: 50px;
     }
 
     .navbar-brand img {

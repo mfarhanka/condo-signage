@@ -223,6 +223,127 @@ const initCatalogueLightbox = () => {
     });
 };
 
+const initLogoCarousel = () => {
+    const carousel = document.querySelector("[data-logo-carousel]");
+    const track = carousel?.querySelector("[data-logo-track]");
+
+    if (!carousel || !track) {
+        return;
+    }
+
+    const baseItems = Array.from(track.children);
+
+    if (baseItems.length === 0) {
+        return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let currentIndex = 0;
+    let intervalId = null;
+
+    const getVisibleCount = () => {
+        if (window.matchMedia("(max-width: 575.98px)").matches) {
+            return 2;
+        }
+
+        if (window.matchMedia("(max-width: 767.98px)").matches) {
+            return 3;
+        }
+
+        return 5;
+    };
+
+    const clearClones = () => {
+        track.querySelectorAll("[data-logo-clone='true']").forEach((item) => item.remove());
+    };
+
+    const cloneItem = (item) => {
+        const clone = item.cloneNode(true);
+        clone.dataset.logoClone = "true";
+        clone.setAttribute("aria-hidden", "true");
+        return clone;
+    };
+
+    const getStepSize = () => {
+        const firstItem = track.querySelector(".logo-carousel-item");
+
+        if (!firstItem) {
+            return 0;
+        }
+
+        const trackStyles = window.getComputedStyle(track);
+        const gapValue = trackStyles.columnGap || trackStyles.gap || "0";
+        const gap = Number.parseFloat(gapValue) || 0;
+
+        return firstItem.getBoundingClientRect().width + gap;
+    };
+
+    const updateTransform = (animate) => {
+        const stepSize = getStepSize();
+
+        track.style.transition = animate ? "transform 0.65s ease" : "none";
+        track.style.transform = stepSize > 0 ? `translateX(-${currentIndex * stepSize}px)` : "translateX(0)";
+    };
+
+    const stopAutoSlide = () => {
+        if (intervalId !== null) {
+            window.clearInterval(intervalId);
+            intervalId = null;
+        }
+    };
+
+    const startAutoSlide = () => {
+        const visibleCount = getVisibleCount();
+
+        if (prefersReducedMotion || intervalId !== null || baseItems.length <= visibleCount) {
+            return;
+        }
+
+        intervalId = window.setInterval(() => {
+            currentIndex += visibleCount;
+            updateTransform(true);
+        }, 2500);
+    };
+
+    const syncCarousel = () => {
+        const visibleCount = getVisibleCount();
+
+        stopAutoSlide();
+        clearClones();
+        carousel.style.setProperty("--logo-visible-count", String(visibleCount));
+        currentIndex = 0;
+
+        if (baseItems.length <= visibleCount) {
+            carousel.classList.add("is-static");
+            updateTransform(false);
+            return;
+        }
+
+        carousel.classList.remove("is-static");
+
+        baseItems.slice(0, visibleCount).forEach((item) => {
+            track.appendChild(cloneItem(item));
+        });
+
+        updateTransform(false);
+        startAutoSlide();
+    };
+
+    track.addEventListener("transitionend", () => {
+        if (currentIndex < baseItems.length) {
+            return;
+        }
+
+        currentIndex = 0;
+        updateTransform(false);
+    });
+
+    carousel.addEventListener("mouseenter", stopAutoSlide);
+    carousel.addEventListener("mouseleave", startAutoSlide);
+    window.addEventListener("resize", syncCarousel);
+    syncCarousel();
+};
+
 const initReviewsRotator = () => {
     const reviewDataNode = document.getElementById("reviews-data");
     const reviewSlots = Array.from(document.querySelectorAll("[data-review-slot]"));
@@ -338,5 +459,6 @@ const initReviewsRotator = () => {
 document.addEventListener("DOMContentLoaded", () => {
     initContactTabs();
     initCatalogueLightbox();
+    initLogoCarousel();
     initReviewsRotator();
 });

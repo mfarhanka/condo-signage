@@ -35,14 +35,18 @@ function renderCardGrid(array $items, string $columnClass, string $cardClass): v
 
 function renderLogoGrid(array $logos): void
 {
-    echo '<div class="logo-grid" aria-label="Client logos">';
+    echo '<div class="logo-carousel" data-logo-carousel aria-label="Client logos">';
+    echo '<div class="logo-carousel-viewport">';
+    echo '<div class="logo-carousel-track" data-logo-track>';
 
     foreach ($logos as $logo) {
-        echo '<div class="logo-grid-item">';
-        echo '<img class="logo-grid-image" src="' . escape($logo['src']) . '" alt="' . escape($logo['alt']) . '" loading="lazy">';
+        echo '<div class="logo-carousel-item">';
+        echo '<img class="logo-carousel-image" src="' . escape($logo['src']) . '" alt="' . escape($logo['alt']) . '" loading="lazy">';
         echo '</div>';
     }
 
+    echo '</div>';
+    echo '</div>';
     echo '</div>';
 }
 

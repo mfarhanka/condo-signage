@@ -267,13 +267,13 @@ $siteConfig = [
         'projects' => [
             'tag' => 'Projects',
             'title' => 'Companies that have used our services.',
-            'copy' => 'Temporary client logo placeholders are shown below in a repeated 20-logo grid until the final brand files are provided.',
+            'copy' => 'A focused selection of client logo placeholders is shown below in a sliding carousel until the final brand files are provided.',
             'logos' => array_map(
                 static fn(int $index): array => [
                     'src' => 'logo.jpg',
                     'alt' => 'Client logo placeholder ' . $index,
                 ],
-                range(1, 20)
+                range(1, 10)
             ),
         ],
         'reviews' => [
