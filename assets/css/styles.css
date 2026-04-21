@@ -696,14 +696,14 @@ p {
 }
 
 .branch-tabs {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
     margin-bottom: 1.5rem;
 }
 
 .branch-tab {
-    min-width: 5.5rem;
+    width: 100%;
     padding: 0.8rem 1.2rem;
     border: 2px solid #111;
     background: #111;
@@ -712,6 +712,7 @@ p {
     font-family: "Barlow Condensed", sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    text-align: center;
 }
 
 .branch-tab.is-active,
