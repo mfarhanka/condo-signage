@@ -247,7 +247,7 @@ const initLogoCarousel = () => {
         }
 
         if (window.matchMedia("(max-width: 767.98px)").matches) {
-            return 3;
+            return 2;
         }
 
         return 5;

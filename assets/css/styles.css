@@ -1283,7 +1283,7 @@ body.lightbox-open {
 
 @media (max-width: 767.98px) {
     .logo-carousel {
-        --logo-visible-count: 3;
+        --logo-visible-count: 2;
         --logo-gap: 1rem;
     }
 
@@ -1314,21 +1314,22 @@ body.lightbox-open {
 
     .logo-carousel {
         --logo-visible-count: 2;
-        --logo-gap: 0.85rem;
+        --logo-gap: 0.5rem;
     }
 
     .logo-carousel::before,
     .logo-carousel::after {
-        width: 2.75rem;
+        width: 1.5rem;
     }
 
     .logo-carousel-item {
-        min-height: 76px;
-        padding: 0.35rem 0.5rem;
+        min-height: 108px;
+        padding: 0.4rem 0.5rem;
     }
 
     .logo-carousel-image {
-        max-height: 50px;
+        max-width: 100%;
+        max-height: 78px;
     }
 
     .navbar-brand img {
