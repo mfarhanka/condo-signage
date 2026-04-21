@@ -769,9 +769,10 @@ p {
 
 .catalogue-page {
     background:
-        radial-gradient(circle at top right, rgba(199, 24, 42, 0.16), transparent 20%),
-        radial-gradient(circle at 10% 22%, rgba(0, 0, 0, 0.06), transparent 16%),
-        linear-gradient(180deg, #f8f9fb 0%, #eef1f4 100%);
+    linear-gradient(180deg, rgba(253, 253, 253, 0.4) 0%, rgba(243, 244, 246, 0.36) 45%, rgba(238, 240, 242, 0.42) 100%) 0 0 / auto auto no-repeat fixed,
+    radial-gradient(circle at top right, rgba(199, 24, 42, 0.1), transparent 20%) 0 0 / auto auto no-repeat fixed,
+    radial-gradient(circle at 10% 22%, rgba(0, 0, 0, 0.03), transparent 16%) 0 0 / auto auto no-repeat fixed,
+    url("../images/background.png") center / cover no-repeat fixed;
 }
 
 .catalogue-hero {
