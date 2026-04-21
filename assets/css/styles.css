@@ -18,9 +18,10 @@ body {
     font-family: "Source Sans 3", sans-serif;
     color: #111;
     background:
-        radial-gradient(circle at top right, rgba(199, 24, 42, 0.14), transparent 24%),
-        radial-gradient(circle at 12% 18%, rgba(0, 0, 0, 0.05), transparent 18%),
-        linear-gradient(180deg, #fdfdfd 0%, #f3f4f6 45%, #eef0f2 100%);
+        linear-gradient(180deg, rgba(253, 253, 253, 0.26) 0%, rgba(243, 244, 246, 0.22) 45%, rgba(238, 240, 242, 0.28) 100%) 0 0 / auto auto no-repeat fixed,
+        radial-gradient(circle at top right, rgba(199, 24, 42, 0.08), transparent 24%) 0 0 / auto auto no-repeat fixed,
+        radial-gradient(circle at 12% 18%, rgba(0, 0, 0, 0.02), transparent 18%) 0 0 / auto auto no-repeat fixed,
+        url("../images/background.png") center / cover no-repeat fixed;
 }
 
 body::before {
@@ -28,23 +29,12 @@ body::before {
     position: fixed;
     inset: 0;
     z-index: -2;
-    background:
-        linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
-        repeating-linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.028) 0,
-            rgba(0, 0, 0, 0.028) 1px,
-            transparent 1px,
-            transparent 120px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.022) 0,
-            rgba(0, 0, 0, 0.022) 1px,
-            transparent 1px,
-            transparent 120px
-        );
+    background: none;
     pointer-events: none;
+}
+
+.bg-light-subtle {
+    background-color: rgba(243, 244, 246, 0.34) !important;
 }
 
 body::after {
@@ -276,8 +266,8 @@ p {
 .intro-strip {
     position: relative;
     background:
-        linear-gradient(90deg, rgba(199, 24, 42, 0.1), rgba(0, 0, 0, 0.04)),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.72));
+        linear-gradient(90deg, rgba(199, 24, 42, 0.08), rgba(0, 0, 0, 0.025)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0.32));
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(6px);
@@ -358,7 +348,7 @@ p {
     position: relative;
     background:
         radial-gradient(circle at 85% 15%, rgba(199, 24, 42, 0.08), transparent 18%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.84) 0%, rgba(243, 244, 246, 0.96) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.44) 0%, rgba(243, 244, 246, 0.5) 100%);
 }
 
 .products-section::before {
@@ -366,7 +356,7 @@ p {
     position: absolute;
     inset: 2rem 0 2rem 0;
     background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.12)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.05)),
         repeating-linear-gradient(
             135deg,
             rgba(0, 0, 0, 0.015) 0,
@@ -480,7 +470,7 @@ p {
     position: relative;
     background:
         radial-gradient(circle at 10% 12%, rgba(199, 24, 42, 0.1), transparent 18%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(245, 246, 248, 0.96));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.48), rgba(245, 246, 248, 0.5));
 }
 
 .reviews-summary-card,
@@ -634,7 +624,7 @@ p {
     position: relative;
     background:
         radial-gradient(circle at 100% 0, rgba(199, 24, 42, 0.12), transparent 30%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(248, 248, 248, 0.98));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.46), rgba(248, 248, 248, 0.54));
 }
 
 .contact-section::before {
