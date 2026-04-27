@@ -498,7 +498,7 @@ $siteConfig = [
         'branches' => [
             [
                 'id' => 'branch',
-                'label' => 'Branch KL',
+                    'label' => 'KL Branch',
                 'active' => false,
                 'office' => [
                     'name' => 'A&T Media Branch Office',
@@ -550,7 +550,7 @@ $siteConfig = [
             ],
             [
                 'id' => 'branch-sg',
-                'label' => 'Branch SG',
+                    'label' => 'SG Branch',
                 'active' => false,
                 'office' => [
                     'name' => 'A&T Media Singapore Branch',
