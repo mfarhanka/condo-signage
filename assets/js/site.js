@@ -19,6 +19,7 @@ const initContactTabs = () => {
     const officeAddress = document.querySelector("[data-contact-office-address]");
     const contactBlocks = document.querySelector("[data-contact-blocks]");
     const whatsappCard = document.querySelector("[data-contact-whatsapp]");
+    const whatsappFloat = document.querySelector("[data-whatsapp-float]");
     const whatsappLabel = document.querySelector("[data-contact-whatsapp-label]");
     const whatsappSubLabel = document.querySelector("[data-contact-whatsapp-sublabel]");
     const phoneCard = document.querySelector("[data-contact-phone]");
@@ -101,6 +102,11 @@ const initContactTabs = () => {
 
         if (whatsappCard) {
             whatsappCard.href = branch.whatsApp.href;
+        }
+
+        if (whatsappFloat) {
+            whatsappFloat.href = branch.whatsApp.href;
+            whatsappFloat.setAttribute("aria-label", branch.whatsApp.label);
         }
 
         if (whatsappLabel) {

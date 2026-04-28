@@ -419,6 +419,15 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
         </div>
     </footer>
 
+    <a class="whatsapp-float-button" data-whatsapp-float href="<?= escape($activeBranch['whatsApp']['href']); ?>" target="_blank" rel="noreferrer" aria-label="<?= escape($activeBranch['whatsApp']['label']); ?>">
+        <span class="whatsapp-float-button__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M19.05 4.94A9.9 9.9 0 0 0 12 2a9.94 9.94 0 0 0-8.62 14.89L2 22l5.26-1.38A9.94 9.94 0 0 0 12 22h.01A9.99 9.99 0 0 0 22 12a9.9 9.9 0 0 0-2.95-7.06Zm-7.04 15.38h-.01a8.3 8.3 0 0 1-4.23-1.16l-.3-.18-3.12.82.84-3.04-.2-.31A8.28 8.28 0 0 1 12 3.68a8.3 8.3 0 0 1 5.89 14.17 8.25 8.25 0 0 1-5.88 2.47Zm4.56-6.2c-.25-.13-1.47-.72-1.7-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.14.17-.28.2-.53.07-.25-.13-1.04-.38-1.98-1.2-.73-.65-1.23-1.45-1.37-1.69-.14-.25-.01-.38.11-.5.11-.11.25-.28.37-.42.12-.14.16-.25.24-.41.08-.17.04-.32-.02-.45-.07-.13-.56-1.35-.77-1.84-.2-.49-.41-.42-.56-.43h-.48c-.16 0-.42.06-.64.31-.22.25-.84.82-.84 2s.86 2.32.98 2.48c.12.17 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.51.58.18 1.11.15 1.52.09.46-.07 1.47-.6 1.67-1.18.21-.59.21-1.09.15-1.18-.06-.1-.22-.16-.47-.28Z" />
+            </svg>
+        </span>
+        <span class="whatsapp-float-button__label">WhatsApp</span>
+    </a>
+
     <script id="contact-branch-data" type="application/json"><?= json_encode($siteConfig['contact']['branches'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?></script>
     <script id="reviews-data" type="application/json"><?= json_encode($siteConfig['sections']['reviews']['items'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?></script>
 
