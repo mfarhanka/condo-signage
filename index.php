@@ -90,6 +90,8 @@ function resolveNavHref(array $item, bool $cataloguePage = false): string
 $brand = $siteConfig['brand'];
 $meta = $siteConfig['meta'];
 $currentYear = date('Y');
+$stylesVersion = (string) filemtime(__DIR__ . '/assets/css/styles.css');
+$scriptVersion = (string) filemtime(__DIR__ . '/assets/js/site.js');
 $activeBranch = null;
 
 foreach ($siteConfig['contact']['branches'] as $branch) {
@@ -114,7 +116,7 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?= escape($stylesVersion); ?>">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
@@ -432,6 +434,6 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
     <script id="reviews-data" type="application/json"><?= json_encode($siteConfig['sections']['reviews']['items'], JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT); ?></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="assets/js/site.js"></script>
+    <script src="assets/js/site.js?v=<?= escape($scriptVersion); ?>"></script>
 </body>
 </html>
