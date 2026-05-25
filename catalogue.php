@@ -18,6 +18,7 @@ function resolveNavHref(array $item): string
 
 $brand = $siteConfig['brand'];
 $catalogue = $siteConfig['catalogue'];
+$seo = $siteConfig['seo'];
 $currentYear = date('Y');
 $stylesVersion = (string) filemtime(__DIR__ . '/assets/css/styles.css');
 $scriptVersion = (string) filemtime(__DIR__ . '/assets/js/site.js');
@@ -33,14 +34,93 @@ foreach ($siteConfig['contact']['branches'] as $branch) {
 if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
     $activeBranch = $siteConfig['contact']['branches'][0];
 }
+
+$metaTitle = $catalogue['metaTitle'];
+$metaDescription = $catalogue['metaDescription'];
+$canonicalUrl = getAbsoluteUrl($siteConfig, 'catalogue.php');
+$socialImageUrl = getSeoImageUrl($siteConfig);
+$categoryList = [];
+
+foreach ($catalogue['categories'] as $position => $category) {
+    $categoryList[] = [
+        '@type' => 'ListItem',
+        'position' => $position + 1,
+        'name' => $category['title'],
+        'url' => getAbsoluteUrl($siteConfig, 'catalogue.php#' . $category['id']),
+    ];
+}
+
+$structuredData = [
+    '@context' => 'https://schema.org',
+    '@graph' => [
+        getOrganizationSchema($siteConfig),
+        [
+            '@type' => 'WebSite',
+            '@id' => getAbsoluteUrl($siteConfig) . '#website',
+            'url' => getAbsoluteUrl($siteConfig),
+            'name' => $brand['name'],
+            'description' => $siteConfig['meta']['description'],
+            'publisher' => ['@id' => getAbsoluteUrl($siteConfig) . '#organization'],
+            'inLanguage' => 'en-MY',
+        ],
+        [
+            '@type' => 'CollectionPage',
+            '@id' => $canonicalUrl . '#webpage',
+            'url' => $canonicalUrl,
+            'name' => $metaTitle,
+            'description' => $metaDescription,
+            'isPartOf' => ['@id' => getAbsoluteUrl($siteConfig) . '#website'],
+            'about' => ['@id' => getAbsoluteUrl($siteConfig) . '#organization'],
+            'primaryImageOfPage' => $socialImageUrl,
+            'inLanguage' => 'en-MY',
+        ],
+        [
+            '@type' => 'BreadcrumbList',
+            '@id' => $canonicalUrl . '#breadcrumbs',
+            'itemListElement' => [
+                [
+                    '@type' => 'ListItem',
+                    'position' => 1,
+                    'name' => 'Home',
+                    'item' => getAbsoluteUrl($siteConfig),
+                ],
+                [
+                    '@type' => 'ListItem',
+                    'position' => 2,
+                    'name' => 'Product Catalogue',
+                    'item' => $canonicalUrl,
+                ],
+            ],
+        ],
+        [
+            '@type' => 'ItemList',
+            '@id' => $canonicalUrl . '#categories',
+            'name' => 'Condo Signage catalogue categories',
+            'itemListElement' => $categoryList,
+        ],
+    ],
+];
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="en-MY">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?= escape($brand['name']); ?> | <?= escape($catalogue['tag']); ?></title>
-    <meta name="description" content="<?= escape($catalogue['copy']); ?>">
+    <title><?= escape($metaTitle); ?></title>
+    <meta name="description" content="<?= escape($metaDescription); ?>">
+    <meta name="robots" content="<?= escape($seo['robots']); ?>">
+    <link rel="canonical" href="<?= escape($canonicalUrl); ?>">
+    <meta property="og:locale" content="<?= escape($seo['locale']); ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="<?= escape($brand['name']); ?>">
+    <meta property="og:title" content="<?= escape($metaTitle); ?>">
+    <meta property="og:description" content="<?= escape($metaDescription); ?>">
+    <meta property="og:url" content="<?= escape($canonicalUrl); ?>">
+    <meta property="og:image" content="<?= escape($socialImageUrl); ?>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= escape($metaTitle); ?>">
+    <meta name="twitter:description" content="<?= escape($metaDescription); ?>">
+    <meta name="twitter:image" content="<?= escape($socialImageUrl); ?>">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
@@ -51,6 +131,7 @@ if ($activeBranch === null && !empty($siteConfig['contact']['branches'][0])) {
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css?v=<?= escape($stylesVersion); ?>">
+    <script type="application/ld+json"><?= encodeStructuredData($structuredData); ?></script>
 </head>
 <body class="catalogue-page">
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">

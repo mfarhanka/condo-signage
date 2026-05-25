@@ -2,6 +2,118 @@
 
 require_once __DIR__ . '/sponsor-logos.php';
 
+function getActiveContactBranch(array $siteConfig): array
+{
+    foreach ($siteConfig['contact']['branches'] ?? [] as $branch) {
+        if (!empty($branch['active'])) {
+            return $branch;
+        }
+    }
+
+    return $siteConfig['contact']['branches'][0] ?? [];
+}
+
+function getSiteBaseUrl(array $siteConfig): string
+{
+    $configuredBaseUrl = trim((string) ($siteConfig['seo']['baseUrl'] ?? ''));
+    if ($configuredBaseUrl !== '') {
+        return rtrim($configuredBaseUrl, '/');
+    }
+
+    $host = trim((string) ($_SERVER['HTTP_HOST'] ?? ''));
+    if ($host !== '') {
+        $isHttps = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+        $scheme = $isHttps ? 'https' : 'http';
+        $scriptName = str_replace('\\', '/', (string) ($_SERVER['SCRIPT_NAME'] ?? ''));
+        $basePath = trim(dirname($scriptName), '/.');
+
+        return $basePath !== ''
+            ? $scheme . '://' . $host . '/' . $basePath
+            : $scheme . '://' . $host;
+    }
+
+    $website = trim((string) ($siteConfig['brand']['website'] ?? ''));
+    if ($website === '') {
+        return '';
+    }
+
+    if (!preg_match('#^https?://#i', $website)) {
+        $website = 'https://' . $website;
+    }
+
+    return rtrim($website, '/');
+}
+
+function getAbsoluteUrl(array $siteConfig, string $path = ''): string
+{
+    $baseUrl = getSiteBaseUrl($siteConfig);
+    if ($baseUrl === '') {
+        return $path === '' ? '/' : '/' . ltrim($path, '/');
+    }
+
+    return $path === ''
+        ? $baseUrl . '/'
+        : $baseUrl . '/' . ltrim($path, '/');
+}
+
+function getSeoImageUrl(array $siteConfig, ?string $path = null): string
+{
+    $imagePath = $path ?? (string) ($siteConfig['seo']['defaultImage'] ?? 'logo.jpg');
+
+    return getAbsoluteUrl($siteConfig, $imagePath);
+}
+
+function encodeStructuredData(array $data): string
+{
+    return (string) json_encode(
+        $data,
+        JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT
+    );
+}
+
+function getOrganizationSchema(array $siteConfig): array
+{
+    $activeBranch = getActiveContactBranch($siteConfig);
+    $addressLines = $activeBranch['office']['addressLines'] ?? [];
+    $telephone = '';
+    $email = '';
+
+    foreach ($activeBranch['contactBlocks'] ?? [] as $block) {
+        if (($block['label'] ?? '') === 'Contact No') {
+            $telephone = (string) ($block['value'] ?? '');
+        }
+
+        if (($block['label'] ?? '') === 'Email Address') {
+            $email = (string) ($block['value'] ?? '');
+        }
+    }
+
+    return [
+        '@type' => 'LocalBusiness',
+        '@id' => getAbsoluteUrl($siteConfig) . '#organization',
+        'name' => $siteConfig['brand']['company'],
+        'alternateName' => $siteConfig['brand']['name'],
+        'url' => getAbsoluteUrl($siteConfig),
+        'logo' => getSeoImageUrl($siteConfig, 'logo.jpg'),
+        'image' => getSeoImageUrl($siteConfig, 'assets/images/photo-team.png'),
+        'description' => $siteConfig['meta']['description'],
+        'telephone' => $telephone,
+        'email' => $email,
+        'address' => [
+            '@type' => 'PostalAddress',
+            'streetAddress' => implode(' ', $addressLines),
+            'addressCountry' => 'MY',
+        ],
+        'areaServed' => ['Malaysia', 'Singapore'],
+        'sameAs' => [$siteConfig['sections']['reviews']['summary']['ctaHref'] ?? ''],
+        'aggregateRating' => [
+            '@type' => 'AggregateRating',
+            'ratingValue' => $siteConfig['sections']['reviews']['summary']['rating'] ?? '5.0',
+            'reviewCount' => 28,
+        ],
+    ];
+}
+
 $managedSponsorLogos = loadSponsorLogos(false);
 $projectLogos = $managedSponsorLogos !== [] ? $managedSponsorLogos : defaultSponsorLogos();
 $projectLogoCopy = $managedSponsorLogos !== []
@@ -190,11 +302,17 @@ $siteConfig = [
         'company' => 'A&T Media Sdn. Bhd.',
         'tagline' => 'Professional condominium and commercial signage solutions.',
         'logo' => 'logo.jpg',
-        'website' => 'www.antsignage.com',
+        'website' => 'https://www.antsignage.com',
+    ],
+    'seo' => [
+        'baseUrl' => 'https://www.antsignage.com',
+        'locale' => 'en_MY',
+        'defaultImage' => 'assets/images/photo-team.png',
+        'robots' => 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
     ],
     'meta' => [
-        'title' => 'Condo Signage | Professional Signage Solutions',
-        'description' => 'Condo Signage delivers professional signage solutions for condominiums and commercial properties, from design and fabrication to installation.',
+        'title' => 'Condo Signage Malaysia | Condominium & Commercial Signage Solutions',
+        'description' => 'Condo Signage by A&T Media provides condominium and commercial signage in Malaysia, including wayfinding, safety signs, notice boards, car park signs, fabrication, and installation.',
     ],
     'nav' => [
         ['key' => 'home', 'label' => 'Home', 'href' => '#home'],
@@ -463,8 +581,10 @@ $siteConfig = [
     'catalogue' => [
         'tag' => 'Product Catalogue',
         'title' => 'Signage categories arranged for condominium operations.',
-        'copy' => 'Browse the full catalogue by category and jump directly to the signage systems your property needs.',
+        'copy' => 'Browse condominium signage categories including wayfinding, safety warning, amenity, door, custom number, and car park signage for managed properties.',
         'intro' => 'This page groups our condominium signage solutions into practical categories so management teams can review scope, function, and likely applications faster.',
+        'metaTitle' => 'Condo Signage Catalogue | Wayfinding, Safety, Car Park & Amenity Signs',
+        'metaDescription' => 'Explore the Condo Signage catalogue for wayfinding signs, notice boards, safety warning signs, indoor and outdoor signage, car park signs, door signs, and amenity signage.',
         'categories' => $catalogueCategories,
     ],
     'services' => [
