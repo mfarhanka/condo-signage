@@ -4,4 +4,4 @@ Disallow: /includes/
 Disallow: /data/
 Disallow: /sponsor-cms.php
 
-Sitemap: https://www.antsignage.com/sitemap.xml
+Sitemap: https://condosignmaster.com/sitemap.xml

@@ -302,10 +302,10 @@ $siteConfig = [
         'company' => 'A&T Media Sdn. Bhd.',
         'tagline' => 'Professional condominium and commercial signage solutions.',
         'logo' => 'logo.jpg',
-        'website' => 'https://www.antsignage.com',
+        'website' => 'https://condosignmaster.com/',
     ],
     'seo' => [
-        'baseUrl' => 'https://www.antsignage.com',
+        'baseUrl' => 'https://condosignmaster.com',
         'locale' => 'en_MY',
         'defaultImage' => 'assets/images/photo-team.png',
         'robots' => 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1',
