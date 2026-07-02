@@ -172,13 +172,13 @@ $structuredData = [
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styles.css?v=<?= escape($stylesVersion); ?>">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4434NF0L8W"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDYW0J8BH0"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', 'G-4434NF0L8W');
+        gtag('config', 'G-MDYW0J8BH0');
     </script>
     <script type="application/ld+json"><?= encodeStructuredData($structuredData); ?></script>
 </head>
